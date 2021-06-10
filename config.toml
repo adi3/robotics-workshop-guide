@@ -48,29 +48,3 @@ theme = "hugo-theme-learn"
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
-
-[deployment]
-order = [".jpg$", ".gif$"]
-
-[[deployment.targets]]
-name = "robotics-workshop"
-URL = "s3://robotics-workshop-adsnghw?region=eu-central-1"
-
-[[deployment.matchers]]
-pattern = "^.+\\.(js|css|svg|ttf)$"
-cacheControl = "max-age=31536000, no-transform, public"
-gzip = true
-
-[[deployment.matchers]]
-pattern = "^.+\\.(png|jpg)$"
-cacheControl = "max-age=31536000, no-transform, public"
-gzip = false
-
-[[deployment.matchers]]
-pattern = "^sitemap\\.xml$"
-contentType = "application/xml"
-gzip = true
-
-[[deployment.matchers]]
-pattern = "^.+\\.(html|xml|json)$"
-gzip = true
