@@ -29,15 +29,15 @@ aws configure
 
 Follow the prompts and enter your _Access Key ID_ and _Secret Access Key_. When prompted for a default region name, type in **us-east-1**. For default output format, type in **json**.
 
-6. Set up a supplementary CLI profile that allows external Rekognition access.
+6. Set up a supplementary CLI profile that allows external access to AWS resources.
 
 ```
-aws configure set profile.rekognition_access.role_arn \
-    arn:aws:iam::517502204741:role/RekognitionForRoboticsWorkshop
+aws configure set profile.robotics_workshop.role_arn \
+    arn:aws:iam::517502204741:role/ResourcesForRoboticsWorkshop
 
-aws configure set profile.rekognition_access.source_profile default
+aws configure set profile.robotics_workshop.source_profile default
 
-aws configure set profile.rekognition_access.region eu-central-1
+aws configure set profile.robotics_workshop.region eu-central-1
 ```
 
 ---

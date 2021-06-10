@@ -17,7 +17,7 @@ chapter = false
     "Statement": {
         "Effect": "Allow",
         "Action": "sts:AssumeRole",
-        "Resource": "arn:aws:iam::517502204741:role/RekognitionForRoboticsWorkshop"
+        "Resource": "arn:aws:iam::517502204741:role/ResourcesForRoboticsWorkshop"
     }
 }
 ```

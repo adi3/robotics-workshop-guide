@@ -27,7 +27,7 @@ cd ~/environment/aws_ws
 rosdep install --from-paths src --ignore-src --rosdistro melodic -r -y
 ```
 
-4. Set up Interbotix robot arm modules. Type _no_ when prompted to set up the perception pipeline in the terminal.
+4. Set up Interbotix robot arm modules. Type **no** when prompted to set up the perception pipeline in the terminal.
 
 ```
 cd ~/environment
