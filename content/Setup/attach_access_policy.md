@@ -24,7 +24,7 @@ chapter = false
 
 ![Inline access policy](/iam-inline-policy.png?classes=border)
 
-3. Click on **Review policy**. For name, type in _RekognitionExternalAccess_. Then hit the **Create policy** button.
+3. Click on **Review policy**. For name, type in _ExternalResourcesAccess_. Then hit the **Create policy** button.
 
 ![Add policy review](/iam-policy-review.png?classes=border)
 
