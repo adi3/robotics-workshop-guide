@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Add Intelligence on AWS Location Based Services workshop featuring Amazon Location</title>
+    <link>http://example.org/add-intelligence/</link>
+    <description>Recent content in Add Intelligence on AWS Location Based Services workshop featuring Amazon Location</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 May 2021 13:44:16 -0500</lastBuildDate><atom:link href="http://example.org/add-intelligence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Confirm model access</title>
+      <link>http://example.org/add-intelligence/confirm_model_access/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/add-intelligence/confirm_model_access/</guid>
+      <description>Add the following code snippet under STEP 1 of main.py.  rospy.loginfo(&amp;quot;Checking state of Rekognition model...&amp;quot;) status = util.model_status(ARN_BASE + PROJECT_ID, model_name, MODEL_ACCESS_PROFILE) rospy.loginfo(&#39;Current model state: %s&#39; % status) if status != &#39;RUNNING&#39;: rospy.logerr(&#39;Rekognition model needs to be in RUNNING state&#39;) return Run the ROS application.  roslaunch robomaker_workshop main.launch Open a new terminal tab and head to the /scripts directory  cd ~/environment/aws_ws/src/robomaker_workshop/scripts Run the main.py script in simulation mode.</description>
+    </item>
+    
+    <item>
+      <title>Snap image from camera stream</title>
+      <link>http://example.org/add-intelligence/snap_camera_image/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/add-intelligence/snap_camera_image/</guid>
+      <description>Add the following code snippet under STEP 2 of main.py.  rospy.logwarn(&#39;Press Enter to snap image from ROS topic&#39;) raw_input() image = util.snap_image() if image == None: rospy.logerr(&#39;Trouble snapping image from ROS topic&#39;) return rospy.loginfo(&#39;Snapped image from local camera stream: %s&#39; % image) Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The terminal output will confirm that an image has been snapped.</description>
+    </item>
+    
+    <item>
+      <title>Locate and identify objects</title>
+      <link>http://example.org/add-intelligence/locate_identify_objects/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/add-intelligence/locate_identify_objects/</guid>
+      <description>Add the following code snippet under STEP 3 of main.py.  rospy.logwarn(&amp;#39;Press Enter to discover labels with Rekognition&amp;#39;) raw_input() labels = util.find_coins(image, model_arn, CONFIDENCE_THRESHOLD, MODEL_ACCESS_PROFILE) rospy.loginfo(&amp;#39;Found %dlabels in image&amp;#39; % len(labels)) util.print_labels(labels) Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The terminal will print out details of the objects detected by Amazon Rekognition.
+Install the ImageMagick package so that our python script can visualize labels.</description>
+    </item>
+    
+    <item>
+      <title>Obtain physical coordinates</title>
+      <link>http://example.org/add-intelligence/obtain_physical/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/add-intelligence/obtain_physical/</guid>
+      <description>Add the following code snippet under STEP 4 of main.py.  rospy.logwarn(&amp;#34;Press Enter to transform coin positions into physical coordinates&amp;#34;) raw_input() rospy.loginfo(&amp;#39;Transforming pixels to physical coordinates...&amp;#39; % len(labels)) coins = {} for l in labels: name = l[&amp;#39;Name&amp;#39;] x, y = util.get_coin_position(l[&amp;#39;Geometry&amp;#39;][&amp;#39;BoundingBox&amp;#39;]) rospy.loginfo(name) rospy.loginfo(&amp;#39;\tX: &amp;#39; + str(x)) rospy.loginfo(&amp;#39;\tY: &amp;#39; + str(y)) coins[name] = [x, y] Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.</description>
+    </item>
+    
+    <item>
+      <title>Command robot to fetch</title>
+      <link>http://example.org/add-intelligence/command_robot/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/add-intelligence/command_robot/</guid>
+      <description>Add the following code snippet under STEP 5 of main.launch.  rospy.logwarn(&amp;quot;Press Enter to instruct robot to pick a coin&amp;quot;) raw_input() robot = PX100(simulated = _sim) for name, position in coins.items(): robot.home() robot.open_gripper() x = position[0] y = position[1] rospy.loginfo(&amp;quot;Picking up %s...&amp;quot; % name) success = robot.go_to([x, y, 0.01]) if success: robot.close_gripper() robot.home() robot.deposit() rospy.loginfo(&amp;quot;No more coins. Going to sleep...&amp;quot;) robot.sleep() Run the main.py script in simulation mode. Press Enter as prompted by the script.</description>
+    </item>
+    
+  </channel>
+</rss>

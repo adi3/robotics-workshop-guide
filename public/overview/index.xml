@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Overview on AWS Location Based Services workshop featuring Amazon Location</title>
+    <link>http://example.org/overview/</link>
+    <description>Recent content in Overview on AWS Location Based Services workshop featuring Amazon Location</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 May 2021 13:44:16 -0500</lastBuildDate><atom:link href="http://example.org/overview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Location service</title>
+      <link>http://example.org/overview/location/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/overview/location/</guid>
+      <description> Supports multiple devices per Tracker Tracker device position supports 2D coordinates in WGS84 coordinate system (same as GPS) Supports multiple geofences per Geofence Collection Supports Here and ESRI geocoding services Supports base map tiles for custom web UI  Track the state of devices with respect to a geofence </description>
+    </item>
+    
+    <item>
+      <title>Architecture</title>
+      <link>http://example.org/overview/arch/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/overview/arch/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

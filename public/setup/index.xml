@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setup on AWS Location Based Services workshop featuring Amazon Location</title>
+    <link>http://example.org/setup/</link>
+    <description>Recent content in Setup on AWS Location Based Services workshop featuring Amazon Location</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 May 2021 13:44:16 -0500</lastBuildDate><atom:link href="http://example.org/setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create IAM Users</title>
+      <link>http://example.org/setup/create_iam_users/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/setup/create_iam_users/</guid>
+      <description>From your AWS console, go to the IAM dashboard and select Users from the left column.  Click on Add User and provide a name for the new user. Allow both access types, leaving default selections for the password options. Then click on Next: Permissions.  Select Attach existing policies directly and choose the AdministratorAccess policy. Then click on Next: Tags.  Skip adding tags and click on Next: Review.</description>
+    </item>
+    
+    <item>
+      <title>Attach access policy</title>
+      <link>http://example.org/setup/attach_access_policy/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/setup/attach_access_policy/</guid>
+      <description>Log in to your AWS account with the credentials provided to you in the previous step. Go to IAM Users, then click on your user name to open the resource summary page. Select Add inline policy on the right.  On the Create policy page, choose the JSON tab and replace its contents with the following snippet.  { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: { &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;sts:AssumeRole&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:iam::517502204741:role/RekognitionForRoboticsWorkshop&amp;quot; } } Click on Review policy.</description>
+    </item>
+    
+    <item>
+      <title>Launch Cloud9 IDE</title>
+      <link>http://example.org/setup/launch_cloud9/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/setup/launch_cloud9/</guid>
+      <description>Go to the AWS RoboMaker dashboard and select Development environments from the left column.  Click on Create development environment, provide a name for the resource, and choose Melodic for the ROS distribution. Select c5.9xlarge for instance type, leaving all other options as default. Then click Create.  The IDE will open up in a new tab and spin up any required resources. This usually takes a few minutes. Once the IDE is active, click on the gear icon in the top-right corner of the window.</description>
+    </item>
+    
+    <item>
+      <title>Set up ROS project</title>
+      <link>http://example.org/setup/set_up_project/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/setup/set_up_project/</guid>
+      <description>Create a workspace for the ROS project in our Cloud9 IDE.  mkdir -p ~/environment/aws_ws/src/ cd aws_ws/src Download starter code for our ROS application from GitHub.  git clone https://github.com/adi3/robomaker_workshop Install package dependencies. This step will take several minutes to complete.  cd ~/environment/aws_ws rosdep install --from-paths src --ignore-src --rosdistro melodic -r -y Set up Interbotix robot arm modules. Type no when prompted to set up the perception pipeline in the terminal.</description>
+    </item>
+    
+    <item>
+      <title>Run blank application</title>
+      <link>http://example.org/setup/run_blank_app/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/setup/run_blank_app/</guid>
+      <description>Install catkin build tools.  sudo apt update sudo apt install python-catkin-tools -y Build the ROS project.  cd ~/environment/aws_ws catkin build source devel/setup.bash Click on Virtual Desktop at the top, then select Launch Virtual Desktop to open up the Ubuntu desktop GUI.  Launch the ROS application, and confirm that it runs without errors. No GUI is expected to appear yet.  roslaunch robomaker_workshop main.launch  Explore application topography by looking at output from the following commands:</description>
+    </item>
+    
+  </channel>
+</rss>

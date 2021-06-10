@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wrap Up on AWS Location Based Services workshop featuring Amazon Location</title>
+    <link>http://example.org/cleanup/</link>
+    <description>Recent content in Wrap Up on AWS Location Based Services workshop featuring Amazon Location</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 May 2021 13:44:16 -0500</lastBuildDate><atom:link href="http://example.org/cleanup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Set up robot controllers</title>
+      <link>http://example.org/cleanup/set_up_controllers/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/cleanup/set_up_controllers/</guid>
+      <description>Add the following code snippet under STEP 3 of main.launch.  &amp;lt;rosparam command=&amp;quot;load&amp;quot; file=&amp;quot;$(find robomaker_workshop)/config/controllers.yaml&amp;quot;&amp;gt; &amp;lt;/rosparam&amp;gt; &amp;lt;node pkg=&amp;quot;controller_manager&amp;quot; name=&amp;quot;controller&amp;quot; type=&amp;quot;controller_manager&amp;quot; respawn=&amp;quot;false&amp;quot; output=&amp;quot;screen&amp;quot; args=&amp;quot;spawn arm_controller gripper_controller joint_state_controller&amp;quot;&amp;gt; &amp;lt;/node&amp;gt; Run the ROS application. No GUI changes are expected at this point.  roslaunch robomaker_workshop main.launch Confirm that the interface for executing robot control has been successfully set up.  rostopic list | grep controller More than two dozen ROS topics spawned by the controller_manager package should appear in the output.</description>
+    </item>
+    
+    <item>
+      <title>AWS Resources Cleanup</title>
+      <link>http://example.org/cleanup/aws_resources/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/cleanup/aws_resources/</guid>
+      <description>Now that you have finished with the workshop we want to make sure that you clean up all the resources that were deployed.
+ Navigate the AWS CloudFormation console and Delete the stack created earlier.  </description>
+    </item>
+    
+    <item>
+      <title>Sign up</title>
+      <link>http://example.org/cleanup/signup/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/cleanup/signup/</guid>
+      <description>Periodically we may have updates to this workshop that reflect improvements to existing modules. This might occur due to a new service or feature that simplifies how you accomplish an outcome we&amp;rsquo;ve addressed. We also plan to add additional modules that extend the base workshop.
+Send an email to kevinol@amazon.com if you&amp;rsquo;re interested in receiving an email update when changes are released.</description>
+    </item>
+    
+  </channel>
+</rss>

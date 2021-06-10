@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model Training on AWS Location Based Services workshop featuring Amazon Location</title>
+    <link>http://example.org/model-training/</link>
+    <description>Recent content in Model Training on AWS Location Based Services workshop featuring Amazon Location</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 May 2021 13:44:16 -0500</lastBuildDate><atom:link href="http://example.org/model-training/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upload dataset to S3</title>
+      <link>http://example.org/model-training/upload_dataset/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/model-training/upload_dataset/</guid>
+      <description>Fetch images of the real-world setup which is already prepared for you.  aws s3 cp s3://adsnghw-robotics/px100-dataset.zip . Unzip the downloaded archive.  unzip px100-dataset.zip Create a bucket on S3. You need to choose a name for your bucket that is globally unique. Refer to S3 naming rules for more information.  aws s3 mb s3://&amp;lt;YOUR_BUCKET_NAME&amp;gt; Upload the dataset to your S3 bucket.  aws s3 cp px100-dataset/ s3://&amp;lt;YOUR_BUCKET_NAME&amp;gt; --recursive Go to the S3 dashboard and confirm that your dataset has been uploaded.</description>
+    </item>
+    
+    <item>
+      <title>Draw bounding boxes</title>
+      <link>http://example.org/model-training/draw_bboxes/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/model-training/draw_bboxes/</guid>
+      <description>Add the following code snippet under STEP 2 of main.py.  rospy.logwarn(&#39;Press Enter to snap image from ROS topic&#39;) raw_input() image = util.snap_image() if image == None: rospy.logerr(&#39;Trouble snapping image from ROS topic&#39;) return rospy.loginfo(&#39;Snapped image from local camera stream: %s&#39; % image) Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The terminal output will confirm that an image has been snapped.</description>
+    </item>
+    
+    <item>
+      <title>Initiate model training</title>
+      <link>http://example.org/model-training/initiate_training/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/model-training/initiate_training/</guid>
+      <description>Add the following code snippet under STEP 3 of main.py.  rospy.logwarn(&amp;#39;Press Enter to discover labels with Rekognition&amp;#39;) raw_input() labels = util.find_coins(image, model_arn, CONFIDENCE_THRESHOLD, MODEL_ACCESS_PROFILE) rospy.loginfo(&amp;#39;Found %dlabels in image&amp;#39; % len(labels)) util.print_labels(labels) Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The terminal will print out details of the objects detected by Amazon Rekognition.
+Install the ImageMagick package so that our python script can visualize labels.</description>
+    </item>
+    
+    <item>
+      <title>Evaluate training results</title>
+      <link>http://example.org/model-training/evaluate_results/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/model-training/evaluate_results/</guid>
+      <description>Add the following code snippet under STEP 4 of main.py.  rospy.logwarn(&amp;#34;Press Enter to transform coin positions into physical coordinates&amp;#34;) raw_input() rospy.loginfo(&amp;#39;Transforming pixels to physical coordinates...&amp;#39; % len(labels)) coins = {} for l in labels: name = l[&amp;#39;Name&amp;#39;] x, y = util.get_coin_position(l[&amp;#39;Geometry&amp;#39;][&amp;#39;BoundingBox&amp;#39;]) rospy.loginfo(name) rospy.loginfo(&amp;#39;\tX: &amp;#39; + str(x)) rospy.loginfo(&amp;#39;\tY: &amp;#39; + str(y)) coins[name] = [x, y] Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.</description>
+    </item>
+    
+    <item>
+      <title>Invoke trained model</title>
+      <link>http://example.org/model-training/invoke_model/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/model-training/invoke_model/</guid>
+      <description>Add the following code snippet under STEP 5 of main.launch.  rospy.logwarn(&amp;quot;Press Enter to instruct robot to pick a coin&amp;quot;) raw_input() robot = PX100(simulated = _sim) for name, position in coins.items(): robot.home() robot.open_gripper() x = position[0] y = position[1] rospy.loginfo(&amp;quot;Picking up %s...&amp;quot; % name) success = robot.go_to([x, y, 0.01]) if success: robot.close_gripper() robot.home() robot.deposit() rospy.loginfo(&amp;quot;No more coins. Going to sleep...&amp;quot;) robot.sleep() Run the main.py script in simulation mode. Press Enter as prompted by the script.</description>
+    </item>
+    
+  </channel>
+</rss>

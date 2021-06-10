@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Add-Ons on AWS Location Based Services workshop featuring Amazon Location</title>
+    <link>http://example.org/add-ons/</link>
+    <description>Recent content in Add-Ons on AWS Location Based Services workshop featuring Amazon Location</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 May 2021 13:44:16 -0500</lastBuildDate><atom:link href="http://example.org/add-ons/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Processing with IoT Core</title>
+      <link>http://example.org/add-ons/iot_core/</link>
+      <pubDate>Mon, 03 May 2021 13:44:16 -0500</pubDate>
+      
+      <guid>http://example.org/add-ons/iot_core/</guid>
+      <description>In this module you will learn how AWS IoT Core can receive position updates for a customer device and process them with Amazon Location.   Open the Lambda console and edit the function called &amp;ldquo;lbs_simulate_customers&amp;rdquo;. Comment out the line near line 96 that called &amp;ldquo;publish_location&amp;rdquo;.
+# publish_location(device)
+and uncomment the line near line 99 that calls &amp;ldquo;publish_location_iot&amp;rdquo;
+publish_location_iot(device)
+  Deploy the function code changes to save them.
+  Using a second browser window, navigate to the AWS IoT console and open the Test page.</description>
+    </item>
+    
+  </channel>
+</rss>
