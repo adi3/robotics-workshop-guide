@@ -6,20 +6,15 @@ chapter = true
 pre = "<b>1. </b>"
 +++
 
-# Business outcome
+# Business Outcome
 
-- Market products to customers based on their proximity to retail store locations.
+- Enable robots to autonomously identify and manipulate objects in their environment.
 
-# Objectives
+# Learning Objectives
 
-- Learn to use the Boto3 SDK with the Amazon Location service
-- Add store locations using a geocoded address and calculated buffer size (geofence)
-- Add a geofence trigger to track presence
-- Simulate customer movement and track location changes
-- Send a coupon via Amazon Pinpoint SMS when a customer is nearby
-
-# Hints for the developer
-
-- Use the AWS CloudShell to perform CLI commands
-- Look for the tag \<COMPLETE THE CODE\> where you need to update or solve for a command or piece of code.
-- Build the solution in the us-east-1 (N. Virginia) AWS region
+- Learn key concepts and toolkits in cloud robotics
+- Leverage AWS services to accelerate robotics development
+- Build realistic in-browser 3D physics simulations
+- Test applications in managed virtual environments
+- Add intelligence to robots with machine learning on AWS
+- Securely connect and develop on real remote hardware
