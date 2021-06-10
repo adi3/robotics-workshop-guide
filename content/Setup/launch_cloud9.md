@@ -32,12 +32,12 @@ Follow the prompts and enter your _Access Key ID_ and _Secret Access Key_. When 
 6. Set up a supplementary CLI profile that allows external access to AWS resources.
 
 ```bash
-aws configure set profile.robotics_workshop.role_arn \
+aws configure set profile.robomaker_workshop.role_arn \
     arn:aws:iam::517502204741:role/ResourcesForRoboticsWorkshop
 
-aws configure set profile.robotics_workshop.source_profile default
+aws configure set profile.robomaker_workshop.source_profile default
 
-aws configure set profile.robotics_workshop.region eu-central-1
+aws configure set profile.robomaker_workshop.region eu-central-1
 ```
 
 ---
