@@ -3,6 +3,7 @@ title = "Attach access policy"
 date = 2021-05-03T13:44:16-05:00
 weight = 20
 chapter = false
+hidden = true
 +++
 
 1. Log in to your AWS account with the credentials provided to you in the previous step. Go to IAM Users, then click on your user name to open the resource summary page. Select **Add inline policy** on the right.
@@ -24,7 +25,7 @@ chapter = false
 
 ![Inline access policy](/iam-inline-policy.png?classes=border)
 
-3. Click on **Review policy**. For name, type in _ExternalResourcesAccess_. Then hit the **Create policy** button.
+3. Click on **Review policy**. For name, type in `RoboticsWorkshopAccess`. Then hit the **Create policy** button.
 
 ![Add policy review](/iam-policy-review.png?classes=border)
 

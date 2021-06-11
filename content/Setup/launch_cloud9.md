@@ -9,7 +9,7 @@ chapter = false
 
 ![RoboMaker Dashboard](/rm-dashboard.png?classes=border)
 
-2. Click on **Create development environment**, provide a name for the resource, and choose _Melodic_ for the ROS distribution. Select _c5.9xlarge_ for instance type, leaving all other options as default. Then click **Create**.
+2. Click on **Create development environment**, provide a name for the resource, and choose _Melodic_ for the ROS distribution. Select _c4.8xlarge_ for instance type, leaving all other options as default. Then click **Create**.
 
 ![Launch IDE](/c9-launch.png?classes=border)
 
@@ -27,7 +27,7 @@ chapter = false
 aws configure
 ```
 
-Follow the prompts and enter your _Access Key ID_ and _Secret Access Key_. When prompted for a default region name, type in **us-east-1**. For default output format, type in **json**.
+Follow the prompts and enter your _Access Key ID_ and _Secret Access Key_. When prompted for a default region name, type in `us-east-1`. For default output format, type in `json`.
 
 6. Set up a supplementary CLI profile that allows external access to AWS resources.
 
