@@ -1,42 +1,27 @@
 +++
 title = "Upload dataset to S3"
-date = 2021-05-03T13:44:16-05:00
 weight = 100
 chapter = false
 +++
 
-1. Fetch images of the real-world setup which is already prepared for you.
+1. Fetch images of the real-world setup which is already prepared for you. Make sure to substitue your team name in the appropriate spot.
 
 ```
-aws s3 cp s3://adsnghw-robotics/px100-dataset.zip .
+aws s3 cp s3://adsnghw-robotics/px100-dataset/<YOUR_TEAM_NAME>.zip /tmp/px100-dataset.zip --profile robomaker_workshop
 ```
 
-2. Unzip the downloaded archive.
+2. Decompress the archive and upload the data to the S3 bucket set up by Rekognition.
 
 ```
-unzip px100-dataset.zip
+unzip -q /tmp/px100-dataset.zip -d /tmp/px100-dataset/
+
+aws s3 cp /tmp/px100-dataset/ s3://<REKOGNITION_S3_BUCKET>/assets/ --recursive
 ```
 
-3. Create a bucket on S3. You need to choose a name for your bucket that is globally unique. Refer to [S3 naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) for more information.
+3. Confirm that your dataset has been correctly received by S3.
 
 ```
-aws s3 mb s3://<YOUR_BUCKET_NAME>
+aws s3 ls s3://<REKOGNITION_S3_BUCKET>/assets | wc -l
 ```
 
-4. Upload the dataset to your S3 bucket.
-
-```
-aws s3 cp px100-dataset/ s3://<YOUR_BUCKET_NAME> --recursive
-```
-
-5. Go to the S3 dashboard and confirm that your dataset has been uploaded. It should contain 50 images.
-
-### SCREENSHOT HERE
-
----
-
-Optionally, clean your workspace by deleting the downloaded assets.
-
-```
-rm -rf px100-dataset*
-```
+The terminal should print out `50`, implying that all fifty images of the dataset are now in the appropriate S3 location.
