@@ -49,4 +49,4 @@ source ~/.bashrc
 
 ---
 
-Our ROS app is now configured and ready to be launched. Take a few moments to explore the code we downloaded in Step 2. Expand the directories in the explorer on the left, and double-click on files to view their contents.
+Our ROS app is now configured and ready to be launched. Take a few moments to explore the code we have downloaded. Expand the directories in the explorer on the left, and double-click on files to view their contents.
