@@ -15,13 +15,13 @@ aws s3 cp s3://adsnghw-robotics/px100-dataset/<YOUR_TEAM_NAME>.zip /tmp/px100-da
 ```
 unzip -q /tmp/px100-dataset.zip -d /tmp/px100-dataset/
 
-aws s3 cp /tmp/px100-dataset/ s3://<REKOGNITION_S3_BUCKET>/assets/ --recursive
+aws s3 cp /tmp/px100-dataset s3://<REKOGNITION_S3_BUCKET>/assets/px100-dataset --recursive
 ```
 
 3. Confirm that your dataset has been correctly received by S3.
 
 ```
-aws s3 ls s3://<REKOGNITION_S3_BUCKET>/assets | wc -l
+aws s3 ls s3://<REKOGNITION_S3_BUCKET>/assets/px100-dataset/ | wc -l
 ```
 
 The terminal should print out `50`, implying that all fifty images of the dataset are now in the appropriate S3 location.
