@@ -1,6 +1,5 @@
 +++
 title = "Model Training"
-date = 2021-05-03T13:44:16-05:00
 weight = 40
 chapter = true
 pre = "<b>5. </b>"

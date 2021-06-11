@@ -1,6 +1,5 @@
 +++
 title = "Test robot movement"
-date = 2021-05-03T13:44:16-05:00
 weight = 600
 chapter = false
 +++
