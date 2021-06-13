@@ -15,7 +15,7 @@ pre = "7. "
 </node>
 ```
 
-2. Run the ROS application.
+2. Press **Ctrl+C** to shut down the running ROS application. Then relaunch it.
 
 ```
 roslaunch robomaker_workshop main.launch

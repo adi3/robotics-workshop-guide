@@ -7,4 +7,4 @@ pre = "4. "
 
 # Robot Operating System
 
-![ROS](/slides/ros-overview.png)
+![ROS](/slides/ros-overview.png?classes=border)

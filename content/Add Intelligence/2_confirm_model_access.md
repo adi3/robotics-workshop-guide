@@ -1,8 +1,11 @@
 +++
 title = "Confirm model access"
-weight = 100
-chapter = false
+weight = 54
+chapter = true
+pre = "2. "
 +++
+
+# Confirm model access
 
 1. Add the following code snippet under **STEP 1** of _main.py_.
 
@@ -16,22 +19,16 @@ if status != 'RUNNING':
     return
 ```
 
-2. Run the ROS application.
+2. Make sure the ROS application is running. Otherwise launch it now.
 
 ```
 roslaunch robomaker_workshop main.launch
 ```
 
-3. Open a new terminal tab and head to the _/scripts_ directory
+3. Open a new terminal tab and run the _main.py_ script in simnulation mode.
 
 ```
-cd ~/environment/aws_ws/src/robomaker_workshop/scripts
-```
-
-4. Run the _main.py_ script in simulation mode.
-
-```
-python main.py --sim
+python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim
 ```
 
 The terminal output should report the current model to be in the _RUNNING_ state.
@@ -43,4 +40,4 @@ The terminal output should report the current model to be in the _RUNNING_ state
 
 ---
 
-Ask your presenter in case you are shown an _AccessDenied_ error or if you find that the model is not running.
+> Ask your presenter in case you are shown an _AccessDenied_ error or if you find that the model is not running.

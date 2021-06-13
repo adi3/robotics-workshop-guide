@@ -5,4 +5,4 @@ chapter = true
 pre = "<b>3. </b>"
 +++
 
-![Build Simulation](/slides/build-simulation.png)
+![Build Simulation](/slides/build-simulation.png?classes=border)

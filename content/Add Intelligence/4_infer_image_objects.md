@@ -1,8 +1,11 @@
 +++
-title = "Locate and identify objects"
+title = "Infer objects in image"
 weight = 300
-chapter = false
+chapter = true
+pre = "4. "
 +++
+
+# Infer objects in image
 
 1. Add the following code snippet under **STEP 3** of _main.py_.
 
@@ -14,37 +17,20 @@ labels = util.find_coins(image, model_arn, CONFIDENCE_THRESHOLD, MODEL_ACCESS_PR
 rospy.loginfo('Found %d labels in image' % len(labels))
 
 util.print_labels(labels)
+util.display_labels(image, labels)
 ```
 
 2. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
 
 ```
-python main.py --sim
+python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim
 ```
 
-The terminal will print out details of the objects detected by Amazon Rekognition.
+3. The terminal will print out details of the objects detected by Amazon Rekognition.
 
 ![Detections in terminal](/detections-term.png?classes=border)
 
-3. Install the _ImageMagick_ package so that our python script can visualize labels.
-
-```
-sudo apt install imagemagick
-```
-
-4. Add the following line at the end of **STEP 3** of _main.py_.
-
-```
-util.display_labels(image, labels)
-```
-
-5. Run the _main.py_ script. Press Enter as prompted by the script.
-
-```
-python main.py --sim
-```
-
-Head over to the virtual desktop and you will see the snapped image superimposed with the labels detected by our machine learning model.
+4. Head over to the virtual desktop and you will see the snapped image superimposed with labels detected by the machine learning model.
 
 ![Detections in terminal](/detections-vis.png?classes=border)
 

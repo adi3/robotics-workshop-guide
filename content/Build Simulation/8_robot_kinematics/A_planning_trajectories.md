@@ -7,4 +7,4 @@ pre = "A. "
 
 # Planning trajectories
 
-![MoveIt](/slides/moveit.gif)
+![MoveIt](/slides/moveit.gif?classes=border)

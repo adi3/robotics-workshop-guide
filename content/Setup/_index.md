@@ -5,4 +5,4 @@ chapter = true
 pre = "<b>2. </b>"
 +++
 
-![Overview](/slides/setup.png)
+![Overview](/slides/setup.png?classes=border)

@@ -7,4 +7,4 @@ pre = "A. "
 
 # Robotic arms
 
-![Robotic Arms](/slides/robotic-arms.png)
+![Robotic Arms](/slides/robotic-arms.png?classes=border)

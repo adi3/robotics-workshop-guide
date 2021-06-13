@@ -7,4 +7,4 @@ pre = "3. "
 
 # System Architecture
 
-![System Architecture](/slides/system-arch.png)
+![System Architecture](/slides/system-arch.png?classes=border)

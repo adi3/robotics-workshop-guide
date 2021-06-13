@@ -11,4 +11,4 @@ Enable robots to autonomously identify and manipulate objects in their environme
 
 ### Learning Objectives
 
-![Learning Objectives](/slides/learning-objectives.png)
+![Learning Objectives](/slides/learning-objectives.png?classes=border)

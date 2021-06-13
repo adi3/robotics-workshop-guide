@@ -7,4 +7,4 @@ pre = "B. "
 
 # AWS RoboMaker
 
-![AWS RoboMaker](/slides/aws-robomaker.png)
+![AWS RoboMaker](/slides/aws-robomaker.png?classes=border)

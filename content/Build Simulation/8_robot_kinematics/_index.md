@@ -7,4 +7,4 @@ pre = "8. "
 
 # Robot kinematics
 
-![Kinematics](/slides/kinematics.png)
+![Kinematics](/slides/kinematics.png?classes=border)

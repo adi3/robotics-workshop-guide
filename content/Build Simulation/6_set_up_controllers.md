@@ -16,7 +16,7 @@ pre = "6. "
     args="spawn arm_controller gripper_controller joint_state_controller" />
 ```
 
-2. Run the ROS application. No GUI changes are expected at this point.
+2. Press **Ctrl+C** to shut down the running ROS application. Then relaunch it.
 
 ```
 roslaunch robomaker_workshop main.launch

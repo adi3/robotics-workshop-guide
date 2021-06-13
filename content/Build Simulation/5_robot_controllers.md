@@ -7,4 +7,4 @@ pre = "5. "
 
 # Robot controllers
 
-![PID Control](/slides/pid-control.png)
+![PID Control](/slides/pid-control.png?classes=border)

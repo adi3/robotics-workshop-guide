@@ -7,4 +7,4 @@ pre = "A. "
 
 # ROS Terminology
 
-![Terminology](/slides/ros-terminology.png)
+![Terminology](/slides/ros-terminology.png?classes=border)

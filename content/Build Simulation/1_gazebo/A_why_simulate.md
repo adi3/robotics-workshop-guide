@@ -7,4 +7,4 @@ pre = "A. "
 
 # Why simulate?
 
-![Why Simulate](/slides/why-simulate.png)
+![Why Simulate](/slides/why-simulate.png?classes=border)

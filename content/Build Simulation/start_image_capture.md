@@ -2,6 +2,7 @@
 title = "Start image capture service"
 weight = 700
 chapter = false
+hidden = true
 +++
 
 1. Add the following code snippet under **STEP 7** of _main.launch_.
@@ -14,7 +15,7 @@ chapter = false
 </node>
 ```
 
-2. Run the ROS application.
+2. Press **Ctrl+C** to shut down the running ROS application. Then relaunch it.
 
 ```
 roslaunch robomaker_workshop main.launch

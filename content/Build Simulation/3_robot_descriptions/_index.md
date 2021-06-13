@@ -7,4 +7,4 @@ pre = "3. "
 
 # Robot descriptions
 
-![Components](/slides/components.png)
+![Components](/slides/components.png?classes=border)

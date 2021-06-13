@@ -7,4 +7,4 @@ pre = "1. "
 
 # Gazebo
 
-![Gazebo](/slides/gazebo.gif)
+![Gazebo](/slides/gazebo.gif?classes=border)

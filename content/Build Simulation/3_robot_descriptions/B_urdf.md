@@ -7,4 +7,4 @@ pre = "B. "
 
 # Unified Robot Description Format (URDF)
 
-![URDF](/slides/urdf.png)
+![URDF](/slides/urdf.png?classes=border)

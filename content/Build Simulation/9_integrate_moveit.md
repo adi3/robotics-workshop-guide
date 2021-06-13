@@ -16,13 +16,13 @@ pre = "9. "
 </include>
 ```
 
-2. Run the ROS application. The robot arm will appear in its default upright position.
+2. Press **Ctrl+C** to shut down the running ROS application. Then relaunch it. The robot arm will appear in its default upright position.
 
 ```
 roslaunch robomaker_workshop main.launch
 ```
 
-3. Open a new terminal tab and execute the **init.py** script from the _/scripts_ folder.
+3. Open a new terminal tab and execute the **init.py** script.
 
 ```
 python ~/environment/aws_ws/src/robomaker_workshop/scripts/init.py

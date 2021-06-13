@@ -1,8 +1,11 @@
 +++
 title = "Obtain physical coordinates"
 weight = 400
-chapter = false
+chapter = true
+pre = "5. "
 +++
+
+# Obtain physical coordinates
 
 1. Add the following code snippet under **STEP 4** of _main.py_.
 
@@ -25,13 +28,13 @@ for l in labels:
 2. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
 
 ```
-python main.py --sim
+python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim
 ```
 
-You will now see the physical XY-coordinates of the coin's location relative to the center of the table. These coordinates are measured in meters.
+3. You will now see the physical XY-coordinates of the coin's location relative to the center of the table. These coordinates are measured in meters.
 
 ![Physical coordinates](/coordinates.png?classes=border)
 
 ---
 
-The robot can now be informed of locations on the table that it needs to move to for collecting the coins.
+> The robot can now be informed of locations on the table that it needs to move to for collecting the coins.
