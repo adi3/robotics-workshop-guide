@@ -1,6 +1,6 @@
 +++
 title = "Wrap Up"
-weight = 100
+weight = 600
 chapter = true
 pre = "<b>6. </b>"
 +++

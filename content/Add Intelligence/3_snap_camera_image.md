@@ -1,6 +1,6 @@
 +++
 title = "Snap image from camera"
-weight = 200
+weight = 430
 chapter = true
 pre = "3. "
 +++

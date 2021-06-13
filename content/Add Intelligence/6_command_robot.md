@@ -1,6 +1,6 @@
 +++
 title = "Command robot to fetch"
-weight = 500
+weight = 460
 chapter = true
 pre = "6. "
 +++

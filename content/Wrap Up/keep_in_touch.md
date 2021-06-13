@@ -1,6 +1,6 @@
 +++
 title = "Keep in touch!"
-weight = 2000
+weight = 620
 chapter = false
 +++
 

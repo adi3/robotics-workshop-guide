@@ -1,6 +1,6 @@
 +++
 title = "Set up ROS project"
-weight = 23
+weight = 230
 chapter = true
 pre = "3. "
 +++

@@ -1,6 +1,6 @@
 +++
 title = "Robot controllers"
-weight = 38
+weight = 350
 chapter = true
 pre = "5. "
 +++

@@ -1,6 +1,6 @@
 +++
 title = "Setup"
-weight = 20
+weight = 200
 chapter = true
 pre = "<b>2. </b>"
 +++

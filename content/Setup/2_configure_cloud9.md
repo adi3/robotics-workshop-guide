@@ -1,6 +1,6 @@
 +++
 title = "Configure Cloud9 IDE"
-weight = 22
+weight = 220
 chapter = true
 pre = "2. "
 +++

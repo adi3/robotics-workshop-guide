@@ -1,6 +1,6 @@
 +++
 title = "Obtain physical coordinates"
-weight = 400
+weight = 450
 chapter = true
 pre = "5. "
 +++

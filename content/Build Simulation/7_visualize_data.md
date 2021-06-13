@@ -1,6 +1,6 @@
 +++
 title = "Visualize robot data"
-weight = 40
+weight = 370
 chapter = true
 pre = "7. "
 +++

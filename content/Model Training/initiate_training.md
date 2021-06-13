@@ -1,5 +1,5 @@
 +++
 title = "Initiate model training"
-weight = 300
+weight = 540
 chapter = false
 +++

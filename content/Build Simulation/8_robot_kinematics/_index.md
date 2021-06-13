@@ -1,6 +1,6 @@
 +++
 title = "Robot kinematics"
-weight = 41
+weight = 380
 chapter = true
 pre = "8. "
 +++

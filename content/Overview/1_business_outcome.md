@@ -1,6 +1,6 @@
 +++
 title = "Business Outcome"
-weight = 11
+weight = 110
 chapter = true
 pre = "1. "
 +++

@@ -1,6 +1,6 @@
 +++
 title = "Set up Rekognition"
-weight = 50
+weight = 510
 chapter = false
 +++
 

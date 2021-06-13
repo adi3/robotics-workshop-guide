@@ -1,11 +1,11 @@
 +++
-title = "Model Inference"
-weight = 53
+title = "Model inference"
+weight = 413
 chapter = true
 pre = "C. "
 +++
 
-# Model Inference
+# Model inference
 
 A Rekognition Custom Labels model has already been trained and validated for you to use in this workshop.
 

@@ -1,6 +1,6 @@
 +++
 title = "Amazon Rekognition"
-weight = 51
+weight = 411
 chapter = true
 pre = "A. "
 +++

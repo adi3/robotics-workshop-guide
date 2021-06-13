@@ -1,6 +1,6 @@
 +++
 title = "Infer objects in image"
-weight = 300
+weight = 440
 chapter = true
 pre = "4. "
 +++

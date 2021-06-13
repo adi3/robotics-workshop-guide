@@ -1,6 +1,6 @@
 +++
 title = "Planning trajectories"
-weight = 42
+weight = 381
 chapter = true
 pre = "A. "
 +++

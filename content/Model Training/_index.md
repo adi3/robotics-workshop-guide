@@ -1,6 +1,6 @@
 +++
 title = "Train ML Model"
-weight = 40
+weight = 500
 chapter = true
 pre = "<b>5. </b>"
 +++

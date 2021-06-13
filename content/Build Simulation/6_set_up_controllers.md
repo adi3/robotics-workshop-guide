@@ -1,6 +1,6 @@
 +++
 title = "Set up controllers"
-weight = 39
+weight = 360
 chapter = true
 pre = "6. "
 +++

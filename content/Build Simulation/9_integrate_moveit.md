@@ -1,6 +1,6 @@
 +++
 title = "Integrate MoveIt"
-weight = 43
+weight = 390
 chapter = true
 pre = "9. "
 +++

@@ -1,6 +1,6 @@
 +++
 title = "Machine Learning"
-weight = 50
+weight = 410
 chapter = true
 pre = "1. "
 +++

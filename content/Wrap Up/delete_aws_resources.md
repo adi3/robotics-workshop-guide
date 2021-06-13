@@ -1,6 +1,6 @@
 +++
 title = "Delete AWS resources"
-weight = 500
+weight = 610
 chapter = false
 +++
 

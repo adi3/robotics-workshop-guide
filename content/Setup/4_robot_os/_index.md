@@ -1,6 +1,6 @@
 +++
 title = "Robot Operating System"
-weight = 25
+weight = 240
 chapter = true
 pre = "4. "
 +++
