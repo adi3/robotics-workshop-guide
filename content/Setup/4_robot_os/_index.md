@@ -5,4 +5,6 @@ chapter = true
 pre = "4. "
 +++
 
-![ROS](/slides/ros.png)
+# Robot Operating System
+
+![ROS](/slides/ros-overview.png)
