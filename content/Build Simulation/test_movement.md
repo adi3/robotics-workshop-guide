@@ -4,37 +4,43 @@ weight = 600
 chapter = false
 +++
 
-1. Add the following code snippet under **STEP 6** of _main.launch_.
+1. Install the AWS SDK for Python.
+
+```
+pip install boto3
+```
+
+2. Add the following code snippet under **STEP 6** of _main.launch_.
 
 ```
 <node pkg="robomaker_workshop" name="init" type="init.py" output="screen" />
 ```
 
-2. Run the ROS application.
+3. Run the ROS application.
 
 ```
 roslaunch robomaker_workshop main.launch
 ```
 
-3. Check out the Gazebo window. The simulated arm should become animated and move to its _sleep_ position.
+4. Check out the Gazebo window. The simulated arm should become animated and move to its _sleep_ position.
 
 ![Init Arm](/init-arm.gif?classes=border)
 
 The same effect can be achieved by running the python script independently of the launch file.
 
-4. Comment out the code added under **Step 6** of _main.launch_.
+5. Comment out the code added under **Step 6** of _main.launch_.
 
 ```
 <!-- <node pkg="robomaker_workshop" name="init" type="init.py" output="screen" /> -->
 ```
 
-5. Run the application again. The robot arm will appear in its default upright position.
+6. Run the application again. The robot arm will appear in its default upright position.
 
 ```
 roslaunch robomaker_workshop main.launch
 ```
 
-6. Now execute the **init.py** script from the _/scripts_ folder.
+7. Now execute the **init.py** script from the _/scripts_ folder.
 
 ```
 cd ~/environment/aws_ws/src/robomaker_workshop/scripts

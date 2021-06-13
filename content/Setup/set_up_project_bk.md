@@ -2,6 +2,7 @@
 title = "Set up ROS project"
 weight = 40
 chapter = false
+hidden = true
 +++
 
 1. Create a workspace for the ROS project in our Cloud9 IDE.
@@ -41,9 +42,9 @@ chmod +x xsarm_amd64_install.sh
 5. Add our workspace setup to the _.bashrc_ file. Then execute its contents.
 
 ```
-echo “~/environment/aws_ws/src/robomaker_workshop/devel/setup.bash” >> ~/.bashrc
-
 source ~/.bashrc
+
+echo "~/environment/aws_ws/src/robomaker_workshop/devel/setup.bash" >> ~/.bashrc
 ```
 
 ---

@@ -1,11 +1,8 @@
 +++
 title = "Wrap Up"
-weight = 500
+weight = 100
 chapter = true
 pre = "<b>6. </b>"
 +++
 
-# Wrap Up
-
-- Delete AWS resources
-- Keep in touch!
+![Add Intelligence](/slides/wrap-up.png)

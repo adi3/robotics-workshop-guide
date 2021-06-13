@@ -5,9 +5,4 @@ chapter = true
 pre = "<b>2. </b>"
 +++
 
-# Setup
-
-- Create IAM users
-- Launch Cloud9 IDE
-- Set up ROS project
-- Run blank application
+![Overview](/slides/setup.png)

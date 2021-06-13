@@ -1,7 +1,7 @@
 +++
 title = "Bring up simulation world"
-weight = 200
-chapter = false
+weight = 32
+chapter = true
 +++
 
 1. Add the following code snippet under **STEP 2** of _main.launch_.

@@ -1,8 +1,11 @@
 +++
 title = "Create IAM Users"
-weight = 10
-chapter = false
+weight = 21
+chapter = true
+pre = "1. "
 +++
+
+# Create IAM Users
 
 1. From your AWS console, go to the IAM dashboard and select **Users** from the left column.
 
@@ -24,10 +27,10 @@ chapter = false
 
 ![IAM credentials](/iam-credentials.png?classes=border)
 
-Repeat these steps for each member of your team. The newly created user will appear in your list of IAM Users.
+6. Repeat these steps for each member of your team, including yourself. The newly created user will appear in your list of IAM Users.
 
 ---
 
-Note that all IAM users use a dedicated sign-in URL to log in to the AWS account. This URL can always be retrieved from your IAM dashboard.
+> Note that all IAM users use a dedicated sign-in URL to log in to the AWS account. This URL can always be retrieved from your IAM dashboard.
 
 ![IAM sign-in URL](/iam-signin-url.png?classes=border)

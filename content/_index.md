@@ -4,4 +4,4 @@ draft: false
 weight: 0
 ---
 
-![Title](/title.png)
+![Title](/slides/title.png)

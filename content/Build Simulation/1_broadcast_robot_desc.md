@@ -1,8 +1,11 @@
 +++
 title = "Broadcast robot description"
-weight = 100
-chapter = false
+weight = 31
+chapter = true
+pre = "1. "
 +++
+
+# Broadcast robot description
 
 1. Add the following code snippet under **STEP 1** of _main.launch_.
 
@@ -29,6 +32,6 @@ roslaunch robomaker_workshop main.launch
 rosparam get -p /robot_description
 ```
 
-You should see some XML output printed in the terminal that describes the form-factor and physics of the robot.
+4. You will see some XML output printed in the terminal that describes the form-factor and physics of the robot.
 
 ![Robot Description](/robot-desc.png?classes=border)

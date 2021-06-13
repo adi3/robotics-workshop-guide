@@ -1,8 +1,11 @@
 +++
-title = "Launch Cloud9 IDE"
-weight = 30
-chapter = false
+title = "Configure Cloud9 IDE"
+weight = 22
+chapter = true
+pre = "2. "
 +++
+
+# Configure Cloud9 IDE
 
 1. Go to the AWS RoboMaker dashboard and select **Development environments** from the left column.
 
@@ -26,25 +29,6 @@ chapter = false
 aws configure
 ```
 
-Follow the prompts and enter your _Access Key ID_ and _Secret Access Key_. When prompted for a default region name, type in `us-east-1`. For default output format, type in `json`.
+6. Follow the prompts and enter your _Access Key ID_ and _Secret Access Key_. When prompted for a default region name, type in `us-east-1`. For default output format, type in `json`.
 
-6. Set up a supplementary CLI profile that allows external access to AWS resources.
-
-```bash
-aws configure set profile.robomaker_workshop.role_arn \
-    arn:aws:iam::517502204741:role/ResourcesForRoboticsWorkshop
-
-aws configure set profile.robomaker_workshop.source_profile default
-
-aws configure set profile.robomaker_workshop.region eu-central-1
-```
-
----
-
-Before we begin developing, confirm the ROS version installed by issuing the following command in the terminal:
-
-```
-rosversion -d
-```
-
-The terminal should print out _melodic_.
+![AWS Credentials](/aws-creds.png?classes=border)

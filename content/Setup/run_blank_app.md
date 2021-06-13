@@ -2,6 +2,7 @@
 title = "Run blank application"
 weight = 50
 chapter = false
+hidden = true
 +++
 
 1. Install catkin build tools.
@@ -34,7 +35,7 @@ roslaunch robomaker_workshop main.launch
 
 ---
 
-Explore application topography by looking at output from the following commands:
+The starter code for our ROS application is now all set up and ready for our changes. Explore application topography by looking at output from the following commands:
 
 ```
 rostopic list
