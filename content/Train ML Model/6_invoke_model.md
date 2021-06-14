@@ -1,5 +1,6 @@
 +++
 title = "Invoke trained model"
 weight = 560
-chapter = false
+chapter = true
+pre = "6. "
 +++

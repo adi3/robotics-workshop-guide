@@ -1,8 +1,15 @@
 +++
-title = "Set up Rekognition"
+title = "Initialize Rekognition"
 weight = 510
-chapter = false
+chapter = true
+pre = "1. "
 +++
+
+# Initialize Rekognition
+
+The following steps need to be carried out only once for each team.
+
+---
 
 1. Go to the Amazon Rekognition console and choose **Use Custom Labels** from the left column.
 
@@ -12,10 +19,10 @@ chapter = false
 
 ![Custom Labels Dashboard](/custom-labels-dash.png?classes=border)
 
-3. You will be greeted by a pop-up prompting you to set up a S3 bucket for Amazon Rekognition. Copy the **S3 bucket name** at the bottom and save it to your local machine. Then click on **Create S3 bucket**.
+3. You will be greeted by a pop-up prompting you to set up a S3 bucket for Amazon Rekognition. Click on **Create S3 bucket**.
 
 ![Custom Labels Setup](/custom-labels-setup.png?classes=border)
 
-A green banner at the top of the screen should confirm a successful setup.
+4. A green banner at the top of the screen should confirm a successful setup.
 
 ![Custom Labels Setup Success](/setup-success.png?classes=border)
