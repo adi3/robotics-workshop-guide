@@ -7,36 +7,28 @@ pre = "2. "
 
 # Set up images dataset
 
-1. Execute the **fetch_data.sh** script, which grabs the images dataset to the S3 bucket you created in the previous step.
+1. Execute the **fetch_dataset.sh** script, which grabs the images dataset to the S3 bucket you created in the previous step.
 
 ```
-source ~/environment/aws_ws/src/robomaker_workshop/fetch_data.sh
+source ~/environment/aws_ws/src/robomaker_workshop/fetch_dataset.sh
 ```
 
-<!-- 1. Fetch images of the real-world setup which is already prepared for you. Make sure to substitue your team name in the appropriate spot.
+2. Copy the **S3 Path** printed out by the script at the end.
 
-```
-aws s3 cp s3://adsnghw-robotics/px100-dataset/real_coins.zip /tmp/px100-dataset.zip --profile robomaker_workshop
+![Dataset Path](/dataset-path.png?classes=border)
 
-unzip -q /tmp/px100-dataset.zip -d /tmp/px100-dataset
+3. Head back to the Rekognition Custom Labels console and select **Datasets** on the left. Then click on **Create dataset**.
 
-BUCKET=px100-dataset-$(cut -d'-' -f1 <<< $(uuidgen))
+![Create Dataset](/create-dataset.png?classes=border)
 
-aws s3 cp /tmp/px100-dataset s3://$BUCKET/assets/px100-dataset --recursive
-```
+4. Enter a name for your dataset, preferably with your username in it so as to keep it unique within your team. Then select the _Import images from Amazon S3 bucket_ option.
 
-2. Decompress the archive and upload the data to the S3 bucket set up by Rekognition.
+![Dataset Config](/dataset-config.png?classes=border)
 
-```
-unzip -q /tmp/px100-dataset.zip -d /tmp/px100-dataset/
+5. A new option will appear asking for your _S3 folder location_. Enter the **S3 Path** you copied above.
 
-aws s3 cp /tmp/px100-dataset s3://<REKOGNITION_S3_BUCKET>/assets/px100-dataset --recursive
-```
+![Dataset Submit](/dataset-submit.png?classes=border)
 
-3. Confirm that your dataset has been correctly received by S3.
+6. Your images dataset will be created and presented in a grid layout, all set to be labelled.
 
-```
-aws s3 ls s3://<REKOGNITION_S3_BUCKET>/assets/px100-dataset/ | wc -l
-```
-
-The terminal should print out `50`, implying that all fifty images of the dataset are now in the appropriate S3 location. -->
+[SCREEENSHOT HERE]

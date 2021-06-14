@@ -21,6 +21,10 @@ pre = "7. "
 roslaunch robomaker_workshop main.launch
 ```
 
-3. The RViz GUI should appear on the virtual desktop. Take a few moments to explore its various components, and get an understanding of how RViz shows the camera livestream from our simulated Gazebo world.
+3. The RViz GUI should appear on the virtual desktop.
 
 ![RViz GUI](/rviz.png?classes=border)
+
+---
+
+> Pay special attention to the camera livestream of our simulated Gazebo world that shows up in Rviz.

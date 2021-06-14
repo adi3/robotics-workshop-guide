@@ -1,13 +1,15 @@
 +++
 title = "Delete AWS resources"
-weight = 610
-chapter = false
+weight = 810
+chapter = true
+pre = "1. "
 +++
 
 1. Delete the Rekognition dataset you uploaded to S3.
 
 ```
-aws s3 rm s3://<REKOGNITION_S3_BUCKET>/assets/px100-dataset --recursive
+BUCKET=$(aws s3 ls | awk '{print $3}' | grep "custom-labels-console")
+aws s3 rb s3://$BUCKET --force
 ```
 
 2. Go to **Development environments** in the AWS RoboMaker dashboard. Select the environment you created for this workshop and click **Delete**.
