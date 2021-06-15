@@ -7,7 +7,7 @@ pre = "5. "
 
 # Obtain physical coordinates
 
-1. Add the following code snippet under **STEP 4** of _main.py_.
+1. Add the following code snippet under **STEP 3** of _main.py_.
 
 ```python
 rospy.logwarn("Press Enter to transform coin positions into physical coordinates")

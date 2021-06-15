@@ -7,7 +7,7 @@ pre = "4. "
 
 # Infer objects in image
 
-1. Add the following code snippet under **STEP 3** of _main.py_.
+1. Add the following code snippet under **STEP 2** of _main.py_.
 
 ```python
 rospy.logwarn('Press Enter to discover labels with Rekognition')

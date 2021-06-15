@@ -7,10 +7,10 @@ pre = "6. "
 
 # Command robot to fetch
 
-1. Add the following code snippet under **STEP 5** of _main.launch_.
+1. Add the following code snippet under **STEP 4** of _main.launch_.
 
 ```
-rospy.logwarn("Press Enter to instruct robot to pick a coin")
+rospy.logwarn("Press Enter to instruct robot to fetch coins")
 raw_input()
 
 robot = PX100(simulated = _sim)
@@ -40,7 +40,7 @@ robot.sleep()
 python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim
 ```
 
-3. The simulated robot arm will calculate an appropriate trajectory for moving to a coin's location, pick up the coin, and deposit it at a pre-defined location. The robot will do this for each of the coins found in the previous steps.
+The simulated robot arm will calculate an appropriate trajectory for moving to a coin's location, pick up the coin, and deposit it at a pre-defined location. The robot will do this for each of the coins found in the previous steps.
 
 ![Robot fetching coins](/robot-fetching.gif?classes=border)
 
