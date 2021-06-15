@@ -5,6 +5,8 @@ chapter = true
 pre = "2. "
 +++
 
+TODO: SETUP BRAND NEW INSTANCE OF BOTWORKS AND CONNECT ALL ROBOTS TO IT
+
 ...register as new user... [REGISTER THEM AS USERS ALREADY IN COGNITO]
 
 ...start session...

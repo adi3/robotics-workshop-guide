@@ -26,7 +26,7 @@ pre = "<b>1. </b>"
 
   - The coins will be placed such that they are within physical reach of the robot arm.
 
-[IMAGE HERE]
+![Coin placements](/coin-placements.png?classes=border&width=30pc)
 
 - You will have 90 minutes to prepare and test your code for competing in the challenge. Use the application we have built so far as the starting point. Some areas you could work on include:
 
