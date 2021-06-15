@@ -29,6 +29,6 @@ source ~/environment/aws_ws/src/robomaker_workshop/fetch_dataset.sh
 
 ![Dataset Submit](/dataset-submit.png?classes=border)
 
-6. Your images dataset will be created and presented in a grid layout, all set to be labelled.
+6. The images dataset will be created and presented to you in a grid layout, all set to be labelled.
 
-[SCREEENSHOT HERE]
+![Dataset Loaded](/dataset-loaded.png?classes=border)
