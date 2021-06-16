@@ -6,8 +6,9 @@ pre = "2. "
 +++
 
 TODO: SETUP BRAND NEW INSTANCE OF BOTWORKS AND CONNECT ALL ROBOTS TO IT
+LET USERS REGISTER THEMSELVES
 
-...register as new user... [REGISTER THEM AS USERS ALREADY IN COGNITO]
+...register as new user...
 
 ...start session...
 

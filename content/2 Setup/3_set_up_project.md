@@ -15,7 +15,7 @@ curl https://raw.githubusercontent.com/adi3/robomaker_workshop/master/setup.sh >
 source setup.sh
 ```
 
-While the environment is being readied, let us learn a little about the [Robot Operating System](/setup/4_robot_os/), often abbreviated as ROS.
+This script will take several minutes to finish. While the environment is being readied, let us learn a little about the [Robot Operating System](/setup/4_robot_os/), often abbreviated as ROS.
 
 ---
 
