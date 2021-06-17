@@ -5,10 +5,16 @@ chapter = true
 pre = "2. "
 +++
 
-...register as new user...
+# Connect to remote robot
+
+Only one user may connect to a robot at a time.
+
+---
+
+...select your own team's robot...
 
 ...start session...
 
 ...start camera...
 
-run bartender stripped down (sleep -> home -> sleep) script to test
+run random_dance stripped down (sleep -> home -> sleep) script to test

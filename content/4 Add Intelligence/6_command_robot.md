@@ -13,8 +13,6 @@ pre = "6. "
 rospy.logwarn("Press Enter to instruct robot to fetch coins")
 raw_input()
 
-robot = PX100(simulated = _sim)
-
 for name, position in coins.items():
     robot.home()
     robot.open_gripper()

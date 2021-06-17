@@ -44,7 +44,7 @@ pre = "<b>1. </b>"
 
   > See how you might use Gazebo to test your code in a virtual environment before running it on the physical arm.
 
-- When you are ready, connect to your team's robot via [Botworks](https://dev.d2rcok16r5ls94.amplifyapp.com/), and conduct any testing and optimization on the real hardware.
+- When you are ready, connect to your team's robot via [Botworks](https://dev.d1ma7f8muz7c4s.amplifyapp.com/), and conduct any testing and optimization on the real hardware.
 
   - The robot assigned to your team will contain your team name in its listing on Botworks.
   - You are free to connect to your team's robot at any point for any duration during the 90-minute preparation window.
