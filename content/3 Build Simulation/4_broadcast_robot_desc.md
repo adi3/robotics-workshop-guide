@@ -7,7 +7,7 @@ pre = "4. "
 
 # Broadcast robot description
 
-1. Open the _main.launch_ file located at the following path.
+1. Open the _main.launch_ file located at the following path:
 
 ```c
 aws_ws -> src -> robomaker_workshop -> launch -> main.launch
@@ -38,6 +38,8 @@ roslaunch robomaker_workshop main.launch
 ---
 
 > You can check out the raw robot information being broadcasted by printing the associated ROS parameter. This parameter holds the XML output describing the form-factor and physics of the robot.
+
+5. Confirm that your ROS application is still running. In a new terminal tab, poll the ROS Parameter Server for the robot's description.
 
 ```
 rosparam get -p /robot_description

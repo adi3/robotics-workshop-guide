@@ -7,7 +7,7 @@ pre = "6. "
 
 # Command robot to fetch
 
-1. Open the _main.py_ file located at the following path.
+1. Open the _main.py_ file located at the following path:
 
 ```c
 aws_ws -> src -> robomaker_workshop -> scripts -> main.py
@@ -16,9 +16,6 @@ aws_ws -> src -> robomaker_workshop -> scripts -> main.py
 2. Add the following code snippet under **STEP 4** of _main.py_. Then hit save.
 
 ```
-rospy.logwarn("Press Enter to instruct robot to fetch coins")
-raw_input()
-
 for name, position in coins.items():
     robot.home()
     robot.open_gripper()
@@ -37,6 +34,12 @@ for name, position in coins.items():
 rospy.loginfo("No more coins. Going to sleep...")
 robot.sleep()
 ```
+
+---
+
+> Python is senstitive to identation so make sure that the tabs and spaces in your code _exactly_ match the code shown here.
+
+---
 
 3. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
 

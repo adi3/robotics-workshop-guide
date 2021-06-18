@@ -7,7 +7,7 @@ pre = "3. "
 
 # Confirm model access
 
-1. Open the _main.py_ file located at the following path.
+1. Open the _main.py_ file located at the following path:
 
 ```c
 aws_ws -> src -> robomaker_workshop -> scripts -> main.py
@@ -17,13 +17,18 @@ aws_ws -> src -> robomaker_workshop -> scripts -> main.py
 
 ```
 rospy.loginfo("Checking state of Rekognition model...")
-status = util.model_status(ARN_BASE + PROJECT_ID, model_name, MODEL_ACCESS_PROFILE)
+status = util.model_status(project_name, model_name, access_profile)
 
 rospy.loginfo('Current model state: %s' % status)
 if status != 'RUNNING':
     rospy.logerr('Rekognition model needs to be in RUNNING state')
-    return
 ```
+
+---
+
+> Python is senstitive to identation so make sure that the tabs and spaces in your code _exactly_ match the code shown here.
+
+---
 
 3. Make sure the ROS application is running. Otherwise launch it now.
 

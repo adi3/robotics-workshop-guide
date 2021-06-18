@@ -7,7 +7,7 @@ pre = "7. "
 
 # Visualize robot data
 
-1. Open the _main.launch_ file located at the following path.
+1. Open the _main.launch_ file located at the following path:
 
 ```c
 aws_ws -> src -> robomaker_workshop -> launch -> main.launch
@@ -31,6 +31,14 @@ roslaunch robomaker_workshop main.launch
 
 ![RViz GUI](/rviz.png?classes=border)
 
+Pay special attention to the camera livestream of our simulated Gazebo world that shows up in Rviz.
+
 ---
 
-> Pay special attention to the camera livestream of our simulated Gazebo world that shows up in Rviz.
+> You can check out the raw video data by manually subscribing to the ROS topic where the camera data is being published.
+
+```
+rostopic echo /camera/image_raw
+```
+
+![Raw Image](/raw-image.png?classes=border)

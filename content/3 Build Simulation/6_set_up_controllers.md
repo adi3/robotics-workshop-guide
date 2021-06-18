@@ -7,7 +7,7 @@ pre = "6. "
 
 # Set up controllers
 
-1. Open the _main.launch_ file located at the following path.
+1. Open the _main.launch_ file located at the following path:
 
 ```c
 aws_ws -> src -> robomaker_workshop -> launch -> main.launch

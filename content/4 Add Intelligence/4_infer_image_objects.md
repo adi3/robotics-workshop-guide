@@ -7,7 +7,7 @@ pre = "4. "
 
 # Infer objects in image
 
-1. Open the _main.py_ file located at the following path.
+1. Open the _main.py_ file located at the following path:
 
 ```c
 aws_ws -> src -> robomaker_workshop -> scripts -> main.py
@@ -16,15 +16,18 @@ aws_ws -> src -> robomaker_workshop -> scripts -> main.py
 2. Add the following code snippet under **STEP 2** of _main.py_. Then hit save.
 
 ```python
-rospy.logwarn('Press Enter to discover labels with Rekognition')
-raw_input()
-
-labels = util.find_coins(image, model_arn, CONFIDENCE_THRESHOLD, MODEL_ACCESS_PROFILE)
+labels = util.find_coins(IMAGE_NAME, model_arn, CONFIDENCE_THRESHOLD, access_profile)
 rospy.loginfo('Found %d labels in image' % len(labels))
 
 util.print_labels(labels)
 util.display_labels(image, labels)
 ```
+
+---
+
+> Python is senstitive to identation so make sure that the tabs and spaces in your code _exactly_ match the code shown here.
+
+---
 
 3. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
 

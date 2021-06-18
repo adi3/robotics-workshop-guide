@@ -7,7 +7,7 @@ pre = "9. "
 
 # Integrate MoveIt
 
-1. Open the _main.launch_ file located at the following path.
+1. Open the _main.launch_ file located at the following path:
 
 ```c
 aws_ws -> src -> robomaker_workshop -> launch -> main.launch
@@ -28,10 +28,10 @@ aws_ws -> src -> robomaker_workshop -> launch -> main.launch
 roslaunch robomaker_workshop main.launch
 ```
 
-4. Open a new terminal tab and execute the **init.py** script.
+4. Open a new terminal tab and execute the **init.py** script in simulation mode.
 
 ```
-python ~/environment/aws_ws/src/robomaker_workshop/scripts/init.py
+python ~/environment/aws_ws/src/robomaker_workshop/scripts/init.py --sim
 ```
 
 5. Head over to the virtual desktop. The simulated arm will become animated and move to its _sleep_ position.
@@ -45,7 +45,7 @@ The same effect can be achieved by running the python script automatically on ap
 6. Add the following code snippet under **STEP 6** of _main.launch_.
 
 ```
-<node pkg="robomaker_workshop" name="init" type="init.py" output="screen" />
+<node pkg="robomaker_workshop" name="init" type="init.py" output="screen" args="--sim" />
 ```
 
 7. Run the ROS application.
