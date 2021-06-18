@@ -7,7 +7,13 @@ pre = "3. "
 
 # Confirm model access
 
-1. Add the following code snippet under **STEP 1** of _main.py_.
+1. Open the _main.py_ file located at the following path.
+
+```c
+aws_ws -> src -> robomaker_workshop -> scripts -> main.py
+```
+
+2. Add the following code snippet under **STEP 1** of _main.py_. Then hit save.
 
 ```
 rospy.loginfo("Checking state of Rekognition model...")
@@ -19,13 +25,13 @@ if status != 'RUNNING':
     return
 ```
 
-2. Make sure the ROS application is running. Otherwise launch it now.
+3. Make sure the ROS application is running. Otherwise launch it now.
 
 ```
 roslaunch robomaker_workshop main.launch
 ```
 
-3. Open a new terminal tab and run the _main.py_ script in simnulation mode.
+4. Open a new terminal tab and run the _main.py_ script in simnulation mode.
 
 ```
 python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim

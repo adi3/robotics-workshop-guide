@@ -7,7 +7,13 @@ pre = "4. "
 
 # Infer objects in image
 
-1. Add the following code snippet under **STEP 2** of _main.py_.
+1. Open the _main.py_ file located at the following path.
+
+```c
+aws_ws -> src -> robomaker_workshop -> scripts -> main.py
+```
+
+2. Add the following code snippet under **STEP 2** of _main.py_. Then hit save.
 
 ```python
 rospy.logwarn('Press Enter to discover labels with Rekognition')
@@ -20,17 +26,17 @@ util.print_labels(labels)
 util.display_labels(image, labels)
 ```
 
-2. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
+3. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
 
 ```
 python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim
 ```
 
-3. The terminal will print out details of the objects detected by Amazon Rekognition.
+4. The terminal will print out details of the objects detected by Amazon Rekognition.
 
 ![Detections in terminal](/detections-term.png?classes=border)
 
-4. Head over to the virtual desktop and you will see the snapped image superimposed with labels detected by the machine learning model.
+5. Head over to the virtual desktop and you will see the snapped image superimposed with labels detected by the machine learning model.
 
 ![Detections in terminal](/detections-vis.png?classes=border)
 

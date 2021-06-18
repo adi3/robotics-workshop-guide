@@ -7,7 +7,13 @@ pre = "2. "
 
 # Initiate simulation world
 
-1. Add the following code snippet under **STEP 1** of _main.launch_.
+1. Open the _main.launch_ file located at the following path.
+
+```c
+aws_ws -> src -> robomaker_workshop -> launch -> main.launch
+```
+
+2. Add the following code snippet under **STEP 1** of _main.launch_. Then hit save.
 
 ```
 <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -15,13 +21,13 @@ pre = "2. "
 </include>
 ```
 
-2. Run the ROS application.
+3. Press **Ctrl+C** to shut down the running ROS application. Then run it again.
 
 ```
 roslaunch robomaker_workshop main.launch
 ```
 
-3. Go to the virtual desktop to view our Gazebo world.
+4. Go to the virtual desktop to view our Gazebo world.
 
 ![Gazebo World](/gazebo-world.png?classes=border)
 

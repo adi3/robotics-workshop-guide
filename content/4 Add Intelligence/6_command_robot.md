@@ -7,7 +7,13 @@ pre = "6. "
 
 # Command robot to fetch
 
-1. Add the following code snippet under **STEP 4** of _main.launch_.
+1. Open the _main.py_ file located at the following path.
+
+```c
+aws_ws -> src -> robomaker_workshop -> scripts -> main.py
+```
+
+2. Add the following code snippet under **STEP 4** of _main.py_. Then hit save.
 
 ```
 rospy.logwarn("Press Enter to instruct robot to fetch coins")
@@ -32,7 +38,7 @@ rospy.loginfo("No more coins. Going to sleep...")
 robot.sleep()
 ```
 
-2. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
+3. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
 
 ```
 python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim

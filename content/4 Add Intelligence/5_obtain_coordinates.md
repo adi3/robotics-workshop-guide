@@ -7,7 +7,13 @@ pre = "5. "
 
 # Obtain physical coordinates
 
-1. Add the following code snippet under **STEP 3** of _main.py_.
+1. Open the _main.py_ file located at the following path.
+
+```c
+aws_ws -> src -> robomaker_workshop -> scripts -> main.py
+```
+
+2. Add the following code snippet under **STEP 3** of _main.py_. Then hit save.
 
 ```python
 rospy.logwarn("Press Enter to transform coin positions into physical coordinates")
@@ -25,13 +31,13 @@ for l in labels:
     coins[name] = [x, y]
 ```
 
-2. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
+3. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
 
 ```
 python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim
 ```
 
-3. You will now see the physical XY-coordinates of the coin's location relative to the center of the table. These coordinates are measured in meters.
+4. You will now see the physical XY-coordinates of the coin's location relative to the center of the table. These coordinates are measured in meters.
 
 ![Physical coordinates](/coordinates.png?classes=border)
 

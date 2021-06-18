@@ -29,7 +29,7 @@ roslaunch robomaker_workshop main.launch sim:=false
 ..take manual image from ROS..
 
 image should be saved to /scripts path as image_cap.png
-`fswebcam -r 640x480 --png image_cap.png`
+`fswebcam -r 640x480 --png 9 image_cap.png`
 
 specify image...
 ..switch on camera stream..

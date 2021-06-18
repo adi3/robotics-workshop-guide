@@ -11,6 +11,8 @@ pre = "2. "
 
 ![RoboMaker Dashboard](/rm-dashboard.png?classes=border)
 
+> Do not spawn an IDE directly from the Cloud9 console as it will not come preconfigured with ROS-specific tools.
+
 2. Click on **Create development environment**, provide a name for the resource, and choose _Melodic_ for the ROS distribution. Select _c4.8xlarge_ for instance type, leaving all other options as default. Then click **Create**.
 
 ![Launch IDE](/c9-launch.png?classes=border)

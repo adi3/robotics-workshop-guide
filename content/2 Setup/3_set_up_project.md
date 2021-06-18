@@ -21,9 +21,15 @@ This script will take several minutes to finish. While the environment is being 
 
 2. Click on **Virtual Desktop** at the top, then select **Launch Virtual Desktop** to open up the Ubuntu desktop GUI.
 
+![Virtual Desktop Button](/virtual-desktop-btn.png?classes=border)
+
+3. An Ubuntu GUI will open up in a new tab in your browser. Cancel any prompts for software upgrades that you might be presented with.
+
 ![Virtual Desktop](/virtual-desktop.png?classes=border)
 
-3. Launch the ROS application, and confirm that it runs without errors. No GUI is expected to appear yet.
+> If launching the Virtual Desktop fails for some reason, simply wait a few seconds, refresh the Cloud9 tab and execute Step 2 again.
+
+4. Launch the ROS application, and confirm that it runs without errors. No GUI is expected to appear yet.
 
 ```
 roslaunch robomaker_workshop main.launch
@@ -40,3 +46,5 @@ rosnode list
 
 rosparam list
 ```
+
+You can press **Ctrl+C** in the terminal anytime to shut down the running ROS application. This is considered a clean way of exiting a process in the world of ROS.
