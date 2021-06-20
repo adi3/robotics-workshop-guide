@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Robot Operating System on Cloud Robotics with AWS</title>
+    <link>https://aws.amazon.com/2-setup/4_robot_os/</link>
+    <description>Recent content in Robot Operating System on Cloud Robotics with AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aws.amazon.com/2-setup/4_robot_os/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS Terminology</title>
+      <link>https://aws.amazon.com/2-setup/4_robot_os/a_ros_terminology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/2-setup/4_robot_os/a_ros_terminology/</guid>
+      <description>ROS Terminology </description>
+    </item>
+    
+    <item>
+      <title>AWS RoboMaker</title>
+      <link>https://aws.amazon.com/2-setup/4_robot_os/b_aws_robomaker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/2-setup/4_robot_os/b_aws_robomaker/</guid>
+      <description>AWS RoboMaker </description>
+    </item>
+    
+  </channel>
+</rss>

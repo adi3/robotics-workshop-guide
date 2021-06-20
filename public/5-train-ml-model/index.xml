@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Train ML Model on Cloud Robotics with AWS</title>
+    <link>https://aws.amazon.com/5-train-ml-model/</link>
+    <description>Recent content in Train ML Model on Cloud Robotics with AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aws.amazon.com/5-train-ml-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Initialize Rekognition</title>
+      <link>https://aws.amazon.com/5-train-ml-model/1_initialize_rekognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/5-train-ml-model/1_initialize_rekognition/</guid>
+      <description>Initialize Rekognition The following steps need to be carried out only once for each team.
+  Go to the Amazon Rekognition console and choose Use Custom Labels from the left column.  Click on Datasets on the left.  You will be greeted by a pop-up prompting you to set up a S3 bucket for Amazon Rekognition. Click on Create S3 bucket.  A green banner at the top of the screen should confirm a successful setup.</description>
+    </item>
+    
+    <item>
+      <title>Set up images dataset</title>
+      <link>https://aws.amazon.com/5-train-ml-model/2_set_up_dataset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/5-train-ml-model/2_set_up_dataset/</guid>
+      <description>Set up images dataset  Execute the fetch_dataset.sh script, which grabs the images dataset to the S3 bucket you created in the previous step.  source ~/environment/aws_ws/src/robomaker_workshop/fetch_dataset.sh Copy the S3 Path printed out by the script at the end.  Head back to the Rekognition Custom Labels console and select Datasets on the left. Then click on Create dataset.  Enter a name for your dataset, preferably with your username in it so as to keep it unique within your team.</description>
+    </item>
+    
+    <item>
+      <title>Draw bounding boxes</title>
+      <link>https://aws.amazon.com/5-train-ml-model/3_draw_bboxes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/5-train-ml-model/3_draw_bboxes/</guid>
+      <description>Draw bounding boxes  Click on Start Labeling on the top right of the dataset console.  The console will activate Labeling mode. Click on Add labels on the left.  In the pop-up that appears, choose the Add labels option and enter your labels one-by-one, each time pressing Add label to append it to the list. Once you have done putting in all your labels, click on Save.   We have 5 types of coins occuring in our images dataset, so we have added a label for each coin type above.</description>
+    </item>
+    
+    <item>
+      <title>Initiate model training</title>
+      <link>https://aws.amazon.com/5-train-ml-model/4_initiate_training/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/5-train-ml-model/4_initiate_training/</guid>
+      <description>Initiate model training  Go back to the Rekognition Custom Labels console and select Projects on the left. Then click on Create project.  Give your project a name, preferably with your username in it so as to keep it unique within your team. Then click on Create project.  Choose the project you just created and click on Train new model.  Select your labeled dataset from the dropdown under Choose training dataset.</description>
+    </item>
+    
+    <item>
+      <title>Evaluate training results</title>
+      <link>https://aws.amazon.com/5-train-ml-model/5_evaluate_results/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/5-train-ml-model/5_evaluate_results/</guid>
+      <description>Evaluate training results  Once your model is ready to run, its status will be changed to TRAINING COMPLETED in the Rekognition Custom Labels console.  Select your project and check out the various metrics describing the performance of the model against your labeled dataset in the Evaluation results section. The closer their value is to 1, the better is the model&amp;rsquo;s performance.   Rekognition also provides performane metrics for individual labels and the confidence with which the model can identify them in an image.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deploy Application on Cloud Robotics with AWS</title>
+    <link>https://aws.amazon.com/6-deploy-application/</link>
+    <description>Recent content in Deploy Application on Cloud Robotics with AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aws.amazon.com/6-deploy-application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Register on Botworks</title>
+      <link>https://aws.amazon.com/6-deploy-application/1_register_on_botworks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/6-deploy-application/1_register_on_botworks/</guid>
+      <description>Register on Botworks  Head over to the Botworks portal and click on Create account.  Type in a username, password and a valid email address. The phone field may be left empty. Then click on CREATE ACCOUNT.   We recommend your username and email address to be the same that you used for accessing the AWS console.
+ You will soon receive an email with a 6-digit confirmation code at the address you provided above.</description>
+    </item>
+    
+    <item>
+      <title>Connect to remote robot</title>
+      <link>https://aws.amazon.com/6-deploy-application/2_connect_to_robot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/6-deploy-application/2_connect_to_robot/</guid>
+      <description>Connect to remote robot Only one user may connect to a robot at a time.
+  Click on an available slot against your team&amp;rsquo;s assigned robot to reserve yourself time on the hardware. You can drag your mouse to book multiple successive slots at once.   Make sure the current time falls between the start and end times of your booking. You can only connect to the robot when your booking window starts.</description>
+    </item>
+    
+    <item>
+      <title>Set up ROS application</title>
+      <link>https://aws.amazon.com/6-deploy-application/3_set_up_application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/6-deploy-application/3_set_up_application/</guid>
+      <description>Set up ROS application  Fetch and build the finished application to the remote robot.  git clone https://github.com/adi3/robomaker_workshop.git --branch completed --single-branch ~/aws_ws/src/robomaker_workshop cd ~/aws_ws catkin build source devel/setup.bash Open the main.py script in a command-line editor.  nano ~/aws_ws/src/robomaker_workshop/scripts/main.py Set the REAL_MODEL_ARN constant in main.py as the model ARN you copied at the end of the last section.   Press Ctrl+O followed by Enter to save a file in the nano editor.</description>
+    </item>
+    
+    <item>
+      <title>Run application on robot</title>
+      <link>https://aws.amazon.com/6-deploy-application/4_run_application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/6-deploy-application/4_run_application/</guid>
+      <description>Run application on robot  Confirm that the robot&amp;rsquo;s camera is switched off by opening the cameras panel. If the camera is still streaming, hit the toggle switch on the right to turn it off.   By default, a video device can only be used by one application at a time. We temporarily turn off the camera in Botworks so that it can be used by the image capturing service in our ROS application.</description>
+    </item>
+    
+  </channel>
+</rss>

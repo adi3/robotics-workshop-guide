@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Cloud Robotics with AWS</title>
+    <link>https://aws.amazon.com/4-add-intelligence/1_machine_learning/</link>
+    <description>Recent content in Machine Learning on Cloud Robotics with AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aws.amazon.com/4-add-intelligence/1_machine_learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Rekognition</title>
+      <link>https://aws.amazon.com/4-add-intelligence/1_machine_learning/a_rekognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/4-add-intelligence/1_machine_learning/a_rekognition/</guid>
+      <description>Amazon Rekognition </description>
+    </item>
+    
+    <item>
+      <title>Dataset labeling</title>
+      <link>https://aws.amazon.com/4-add-intelligence/1_machine_learning/b_dataset_labeling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/4-add-intelligence/1_machine_learning/b_dataset_labeling/</guid>
+      <description>Dataset labeling Amazon Rekognition provides an intuitive visual interface to make image labeling fast and simple.
+The interface allows you to quickly identify and label specific objects in images using bounding boxes with an easy click-and-drag interface.</description>
+    </item>
+    
+    <item>
+      <title>Model inference</title>
+      <link>https://aws.amazon.com/4-add-intelligence/1_machine_learning/c_model_inference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/4-add-intelligence/1_machine_learning/c_model_inference/</guid>
+      <description>Model inference A Rekognition Custom Labels model has already been trained and validated for you to use in this workshop.
+ Simply provide an image to the Rekognition model endpoint and you will receive the identity and location of objects in it.
+ </description>
+    </item>
+    
+  </channel>
+</rss>

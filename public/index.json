@@ -1,259 +1,385 @@
 [
 {
-	"uri": "http://example.org/setup/create_iam_users/",
-	"title": "Create IAM Users",
-	"tags": [],
-	"description": "",
-	"content": " From your AWS console, go to the IAM dashboard and select Users from the left column.  Click on Add User and provide a name for the new user. Allow both access types, leaving default selections for the password options. Then click on Next: Permissions.  Select Attach existing policies directly and choose the AdministratorAccess policy. Then click on Next: Tags.  Skip adding tags and click on Next: Review. Then click on Create User.  Copy all credentials from the next page and share these only with the teammate for whom you created this resource. The Secret Access Key and the Password will never be retrievable after this screen is closed. Email login instructions to your teammate for good measure.  Repeat these steps for each member of your team. The newly created user will appear in your list of IAM Users.\n Note that all IAM users use a dedicated sign-in URL to log in to the AWS account. This URL can always be retrieved from your IAM dashboard.\n"
-},
-{
-	"uri": "http://example.org/overview/",
-	"title": "Overview",
-	"tags": [],
-	"description": "",
-	"content": "Business outcome  Market products to customers based on their proximity to retail store locations.  Objectives  Learn to use the Boto3 SDK with the Amazon Location service Add store locations using a geocoded address and calculated buffer size (geofence) Add a geofence trigger to track presence Simulate customer movement and track location changes Send a coupon via Amazon Pinpoint SMS when a customer is nearby  Hints for the developer  Use the AWS CloudShell to perform CLI commands Look for the tag \u0026lt;COMPLETE THE CODE\u0026gt; where you need to update or solve for a command or piece of code. Build the solution in the us-east-1 (N. Virginia) AWS region  "
-},
-{
-	"uri": "http://example.org/overview/location/",
-	"title": "Amazon Location service",
-	"tags": [],
-	"description": "",
-	"content": " Supports multiple devices per Tracker Tracker device position supports 2D coordinates in WGS84 coordinate system (same as GPS) Supports multiple geofences per Geofence Collection Supports Here and ESRI geocoding services Supports base map tiles for custom web UI  Track the state of devices with respect to a geofence "
-},
-{
-	"uri": "http://example.org/overview/arch/",
-	"title": "Architecture",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://example.org/setup/attach_access_policy/",
+	"uri": "https://aws.amazon.com/2-setup/attach_access_policy/",
 	"title": "Attach access policy",
 	"tags": [],
 	"description": "",
-	"content": " Log in to your AWS account with the credentials provided to you in the previous step. Go to IAM Users, then click on your user name to open the resource summary page. Select Add inline policy on the right.  On the Create policy page, choose the JSON tab and replace its contents with the following snippet.  { \u0026quot;Version\u0026quot;: \u0026quot;2012-10-17\u0026quot;, \u0026quot;Statement\u0026quot;: { \u0026quot;Effect\u0026quot;: \u0026quot;Allow\u0026quot;, \u0026quot;Action\u0026quot;: \u0026quot;sts:AssumeRole\u0026quot;, \u0026quot;Resource\u0026quot;: \u0026quot;arn:aws:iam::517502204741:role/RekognitionForRoboticsWorkshop\u0026quot; } } Click on Review policy. For name, type in RekognitionExternalAccess. Then hit the Create policy button.   The newly added inline policy should now be listed under the Permissions policies section in the user summary page.\n"
+	"content": " Log in to your AWS account with the credentials provided to you in the previous step. Go to IAM Users, then click on your user name to open the resource summary page. Select Add inline policy on the right.  On the Create policy page, choose the JSON tab and replace its contents with the following snippet.  { \u0026quot;Version\u0026quot;: \u0026quot;2012-10-17\u0026quot;, \u0026quot;Statement\u0026quot;: { \u0026quot;Effect\u0026quot;: \u0026quot;Allow\u0026quot;, \u0026quot;Action\u0026quot;: \u0026quot;sts:AssumeRole\u0026quot;, \u0026quot;Resource\u0026quot;: \u0026quot;arn:aws:iam::517502204741:role/ResourcesForRoboticsWorkshop\u0026quot; } } Click on Review policy. For name, type in RoboticsWorkshopAccess. Then hit the Create policy button.   The newly added inline policy should now be listed under the Permissions policies section in the user summary page.\n"
 },
 {
-	"uri": "http://example.org/setup/",
-	"title": "Setup",
-	"tags": [],
-	"description": "",
-	"content": "Setup  Create IAM users Attach access policy Launch Cloud9 IDE Set up ROS project Run blank application  "
-},
-{
-	"uri": "http://example.org/build-simulation/",
-	"title": "Build Simulation",
-	"tags": [],
-	"description": "",
-	"content": "Build Simulation  Broadcast robot description Bring up simulation world Set up robot controllers Visualize robot data Integrate planning toolkit Test robot movement Start image capture service  "
-},
-{
-	"uri": "http://example.org/add-intelligence/",
-	"title": "Add Intelligence",
-	"tags": [],
-	"description": "",
-	"content": "Add Intelligence  Confirm Rekognition model access Snap image from camera stream Locate and identify objects Obtain physical coordinates Command robot to fetch objects  "
-},
-{
-	"uri": "http://example.org/setup/launch_cloud9/",
-	"title": "Launch Cloud9 IDE",
-	"tags": [],
-	"description": "",
-	"content": " Go to the AWS RoboMaker dashboard and select Development environments from the left column.  Click on Create development environment, provide a name for the resource, and choose Melodic for the ROS distribution. Select c5.9xlarge for instance type, leaving all other options as default. Then click Create.  The IDE will open up in a new tab and spin up any required resources. This usually takes a few minutes. Once the IDE is active, click on the gear icon in the top-right corner of the window.  In the Preferences tab, scroll down to select AWS Settings, then choose Credentials. Toggle the switch against AWS managed temporary credentials. We want this setting disabled for the exercise.  Add your IAM user credentials to the machine via the terminal.  aws configure Follow the prompts and enter your Access Key ID and Secret Access Key. When prompted for a default region name, type in us-east-1. For default output format, type in json.\nSet up a supplementary CLI profile that allows external Rekognition access.  aws configure set profile.rekognition_access.role_arn \\ arn:aws:iam::517502204741:role/RekognitionForRoboticsWorkshop aws configure set profile.rekognition_access.source_profile default aws configure set profile.rekognition_access.region eu-central-1  Before we begin developing, confirm the ROS version installed by issuing the following command in the terminal:\nrosversion -d The terminal should print out melodic.\n"
-},
-{
-	"uri": "http://example.org/model-training/",
-	"title": "Model Training",
-	"tags": [],
-	"description": "",
-	"content": "Model Training  Upload dataset to S3 Draw bounding boxes Initiate model training Evaluate training results Invoke trained model  "
-},
-{
-	"uri": "http://example.org/setup/set_up_project/",
-	"title": "Set up ROS project",
-	"tags": [],
-	"description": "",
-	"content": " Create a workspace for the ROS project in our Cloud9 IDE.  mkdir -p ~/environment/aws_ws/src/ cd aws_ws/src Download starter code for our ROS application from GitHub.  git clone https://github.com/adi3/robomaker_workshop Install package dependencies. This step will take several minutes to complete.  cd ~/environment/aws_ws rosdep install --from-paths src --ignore-src --rosdistro melodic -r -y Set up Interbotix robot arm modules. Type no when prompted to set up the perception pipeline in the terminal.  cd ~/environment curl 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/amd64/xsarm_amd64_install.sh' \u0026gt; xsarm_amd64_install.sh chmod +x xsarm_amd64_install.sh ./xsarm_amd64_install.sh Add our workspace setup to the .bashrc file. Then execute its contents.  echo “~/environment/aws_ws/src/robomaker_workshop/devel/setup.bash” \u0026gt;\u0026gt; ~/.bashrc source ~/.bashrc  Our ROS app is now configured and ready to be launched. Take a few moments to explore the code we downloaded in Step 2. Expand the directories in the explorer on the left, and double-click on files to view their contents.\n"
-},
-{
-	"uri": "http://example.org/add-ons/",
-	"title": "Add-Ons",
-	"tags": [],
-	"description": "",
-	"content": "Add-Ons  Receive customer position updates with MQTT via AWS IoT Core  "
-},
-{
-	"uri": "http://example.org/setup/run_blank_app/",
-	"title": "Run blank application",
-	"tags": [],
-	"description": "",
-	"content": " Install catkin build tools.  sudo apt update sudo apt install python-catkin-tools -y Build the ROS project.  cd ~/environment/aws_ws catkin build source devel/setup.bash Click on Virtual Desktop at the top, then select Launch Virtual Desktop to open up the Ubuntu desktop GUI.  Launch the ROS application, and confirm that it runs without errors. No GUI is expected to appear yet.  roslaunch robomaker_workshop main.launch  Explore application topography by looking at output from the following commands:\nrostopic list rosnode list rosparam list "
-},
-{
-	"uri": "http://example.org/build-simulation/broadcast_robot_desc/",
-	"title": "Broadcast robot description",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 1 of main.launch.  \u0026lt;param name=\u0026quot;robot_description\u0026quot; command=\u0026quot;xacro $(find robomaker_workshop)/urdf/$(arg robot_model).urdf.xacro\u0026quot;\u0026gt; \u0026lt;/param\u0026gt; \u0026lt;node name=\u0026quot;robot_state_publisher\u0026quot; pkg=\u0026quot;robot_state_publisher\u0026quot; type=\u0026quot;robot_state_publisher\u0026quot;\u0026gt; \u0026lt;/node\u0026gt; Run the ROS application.  roslaunch robomaker_workshop main.launch Confirm robot information is being published.  rosparam get -p /robot_description You should see some XML output printed in the terminal that describes the form-factor and physics of the robot.\n"
-},
-{
-	"uri": "http://example.org/add-intelligence/confirm_model_access/",
-	"title": "Confirm model access",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 1 of main.py.  rospy.loginfo(\u0026quot;Checking state of Rekognition model...\u0026quot;) status = util.model_status(ARN_BASE + PROJECT_ID, model_name, MODEL_ACCESS_PROFILE) rospy.loginfo('Current model state: %s' % status) if status != 'RUNNING': rospy.logerr('Rekognition model needs to be in RUNNING state') return Run the ROS application.  roslaunch robomaker_workshop main.launch Open a new terminal tab and head to the /scripts directory  cd ~/environment/aws_ws/src/robomaker_workshop/scripts Run the main.py script in simulation mode.  python main.py --sim The terminal output should report the current model to be in the RUNNING state.\n[INFO] [1623011969.371301, 0.000000]: Checking state of Rekognition model... [INFO] [1623011969.626026, 1734.312000]: Current model state: RUNNING  Ask your presenter in case you are shown an AccessDenied error or if you find that the model is not running.\n"
-},
-{
-	"uri": "http://example.org/add-ons/iot_core/",
-	"title": "Processing with IoT Core",
-	"tags": [],
-	"description": "",
-	"content": "In this module you will learn how AWS IoT Core can receive position updates for a customer device and process them with Amazon Location.   Open the Lambda console and edit the function called \u0026ldquo;lbs_simulate_customers\u0026rdquo;. Comment out the line near line 96 that called \u0026ldquo;publish_location\u0026rdquo;.\n# publish_location(device)\nand uncomment the line near line 99 that calls \u0026ldquo;publish_location_iot\u0026rdquo;\npublish_location_iot(device)\n  Deploy the function code changes to save them.\n  Using a second browser window, navigate to the AWS IoT console and open the Test page. Subscribe to all topics using the wildcard # character.\n  Run the \u0026lsquo;lbs_simulate_customers\u0026rsquo; Lambda function using the default test event and immediately switch to the IoT Core test page to check if MQTT messages are arriving.\n  Add an IoT Core Rule that forwards customer device position updates to the \u0026lsquo;lbs_update_tracker\u0026rsquo; Lambda function. Click on Rules on the left and then enter the name lbs_customer_device_update with a topic filter of customers/#\n  Add a Rule Action for a Lambda function and select the \u0026lsquo;lbs_update_tracker\u0026rsquo; function from the list.\n  Save the new rule by clicking Create Rule.\n  Re-test the simulation by running the default test event and observing updates in DynamoDB as before. Updates should be occurring just as they had before, but now via MQTT with IoT Core.\n  "
-},
-{
-	"uri": "http://example.org/model-training/upload_dataset/",
-	"title": "Upload dataset to S3",
-	"tags": [],
-	"description": "",
-	"content": " Fetch images of the real-world setup which is already prepared for you.  aws s3 cp s3://adsnghw-robotics/px100-dataset.zip . Unzip the downloaded archive.  unzip px100-dataset.zip Create a bucket on S3. You need to choose a name for your bucket that is globally unique. Refer to S3 naming rules for more information.  aws s3 mb s3://\u0026lt;YOUR_BUCKET_NAME\u0026gt; Upload the dataset to your S3 bucket.  aws s3 cp px100-dataset/ s3://\u0026lt;YOUR_BUCKET_NAME\u0026gt; --recursive Go to the S3 dashboard and confirm that your dataset has been uploaded. It should contain 50 images.  SCREENSHOT HERE  Optionally, clean your workspace by deleting the downloaded assets.\nrm -rf px100-dataset* "
-},
-{
-	"uri": "http://example.org/build-simulation/bring_up_sim_world/",
-	"title": "Bring up simulation world",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 2 of main.launch.  \u0026lt;include file=\u0026quot;$(find gazebo_ros)/launch/empty_world.launch\u0026quot;\u0026gt; \u0026lt;arg name=\u0026quot;world_name\u0026quot; value=\u0026quot;$(arg world_name)\u0026quot;/\u0026gt; \u0026lt;/include\u0026gt; Run the ROS application.  roslaunch robomaker_workshop main.launch Go to the virtual desktop to view our Gazebo world. You should see a black table with a few colorful coins on it. Take a few moments to familiarize yourself with the Gazebo GUI and the various options it offers.  Add the following code snippet under, once again, STEP 2 of main.launch.  \u0026lt;node pkg=\u0026quot;gazebo_ros\u0026quot; name=\u0026quot;urdf_spawner\u0026quot; type=\u0026quot;spawn_model\u0026quot; respawn=\u0026quot;false\u0026quot; output=\u0026quot;screen\u0026quot; args=\u0026quot;-urdf -model $(arg robot_model) -param robot_description -x $(arg x_offset) -z $(arg table_height)\u0026quot;\u0026gt; \u0026lt;/node\u0026gt; Run the ROS application again.  roslaunch robomaker_workshop main.launch Go to the virtual desktop and confirm that the robot arm appears in the simulated world.  "
-},
-{
-	"uri": "http://example.org/model-training/draw_bboxes/",
-	"title": "Draw bounding boxes",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 2 of main.py.  rospy.logwarn('Press Enter to snap image from ROS topic') raw_input() image = util.snap_image() if image == None: rospy.logerr('Trouble snapping image from ROS topic') return rospy.loginfo('Snapped image from local camera stream: %s' % image) Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The terminal output will confirm that an image has been snapped.\n[INFO] [1623013252.228023, 667.865000]: Snapped image from local camera stream: image_0000.png  A snap of the camera stream should have appeared in your /scripts directory. Double-click on the file to view the image.\n"
-},
-{
-	"uri": "http://example.org/add-intelligence/snap_camera_image/",
-	"title": "Snap image from camera stream",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 2 of main.py.  rospy.logwarn('Press Enter to snap image from ROS topic') raw_input() image = util.snap_image() if image == None: rospy.logerr('Trouble snapping image from ROS topic') return rospy.loginfo('Snapped image from local camera stream: %s' % image) Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The terminal output will confirm that an image has been snapped.\n[INFO] [1623013252.228023, 667.865000]: Snapped image from local camera stream: image_0000.png  A snap of the camera stream should have appeared in your /scripts directory. Double-click on the file to view the image.\n"
-},
-{
-	"uri": "http://example.org/model-training/initiate_training/",
-	"title": "Initiate model training",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 3 of main.py.  rospy.logwarn(\u0026#39;Press Enter to discover labels with Rekognition\u0026#39;) raw_input() labels = util.find_coins(image, model_arn, CONFIDENCE_THRESHOLD, MODEL_ACCESS_PROFILE) rospy.loginfo(\u0026#39;Found %dlabels in image\u0026#39; % len(labels)) util.print_labels(labels) Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The terminal will print out details of the objects detected by Amazon Rekognition.\nInstall the ImageMagick package so that our python script can visualize labels.  sudo apt install imagemagick Add the following line at the end of STEP 3 of main.py.  util.display_labels(image, labels) Run the main.py script. Press Enter as prompted by the script.  python main.py --sim Head over to the virtual desktop and you will see the snapped image superimposed with the labels detected by our machine learning model.\n Our model is thus able to reliably\n identify the right number of objects in the image categorize the objects as the correct type, and locate each object at its precise location  "
-},
-{
-	"uri": "http://example.org/add-intelligence/locate_identify_objects/",
-	"title": "Locate and identify objects",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 3 of main.py.  rospy.logwarn(\u0026#39;Press Enter to discover labels with Rekognition\u0026#39;) raw_input() labels = util.find_coins(image, model_arn, CONFIDENCE_THRESHOLD, MODEL_ACCESS_PROFILE) rospy.loginfo(\u0026#39;Found %dlabels in image\u0026#39; % len(labels)) util.print_labels(labels) Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The terminal will print out details of the objects detected by Amazon Rekognition.\nInstall the ImageMagick package so that our python script can visualize labels.  sudo apt install imagemagick Add the following line at the end of STEP 3 of main.py.  util.display_labels(image, labels) Run the main.py script. Press Enter as prompted by the script.  python main.py --sim Head over to the virtual desktop and you will see the snapped image superimposed with the labels detected by our machine learning model.\n Our model is thus able to reliably\n identify the right number of objects in the image categorize the objects as the correct type, and locate each object at its precise location  "
-},
-{
-	"uri": "http://example.org/cleanup/set_up_controllers/",
-	"title": "Set up robot controllers",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 3 of main.launch.  \u0026lt;rosparam command=\u0026quot;load\u0026quot; file=\u0026quot;$(find robomaker_workshop)/config/controllers.yaml\u0026quot;\u0026gt; \u0026lt;/rosparam\u0026gt; \u0026lt;node pkg=\u0026quot;controller_manager\u0026quot; name=\u0026quot;controller\u0026quot; type=\u0026quot;controller_manager\u0026quot; respawn=\u0026quot;false\u0026quot; output=\u0026quot;screen\u0026quot; args=\u0026quot;spawn arm_controller gripper_controller joint_state_controller\u0026quot;\u0026gt; \u0026lt;/node\u0026gt; Run the ROS application. No GUI changes are expected at this point.  roslaunch robomaker_workshop main.launch Confirm that the interface for executing robot control has been successfully set up.  rostopic list | grep controller More than two dozen ROS topics spawned by the controller_manager package should appear in the output.\nOur Gazebo simulation will now show torques being applied to the virtual robot arm.  "
-},
-{
-	"uri": "http://example.org/model-training/evaluate_results/",
-	"title": "Evaluate training results",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 4 of main.py.  rospy.logwarn(\u0026#34;Press Enter to transform coin positions into physical coordinates\u0026#34;) raw_input() rospy.loginfo(\u0026#39;Transforming pixels to physical coordinates...\u0026#39; % len(labels)) coins = {} for l in labels: name = l[\u0026#39;Name\u0026#39;] x, y = util.get_coin_position(l[\u0026#39;Geometry\u0026#39;][\u0026#39;BoundingBox\u0026#39;]) rospy.loginfo(name) rospy.loginfo(\u0026#39;\\tX: \u0026#39; + str(x)) rospy.loginfo(\u0026#39;\\tY: \u0026#39; + str(y)) coins[name] = [x, y] Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim You will now see the physical XY-coordinates of the coin\u0026rsquo;s location relative to the center of the table. These coordinates are measured in meters.\n The robot can now be informed of locations on the table that it needs to move to for collecting the coins.\n"
-},
-{
-	"uri": "http://example.org/add-intelligence/obtain_physical/",
-	"title": "Obtain physical coordinates",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 4 of main.py.  rospy.logwarn(\u0026#34;Press Enter to transform coin positions into physical coordinates\u0026#34;) raw_input() rospy.loginfo(\u0026#39;Transforming pixels to physical coordinates...\u0026#39; % len(labels)) coins = {} for l in labels: name = l[\u0026#39;Name\u0026#39;] x, y = util.get_coin_position(l[\u0026#39;Geometry\u0026#39;][\u0026#39;BoundingBox\u0026#39;]) rospy.loginfo(name) rospy.loginfo(\u0026#39;\\tX: \u0026#39; + str(x)) rospy.loginfo(\u0026#39;\\tY: \u0026#39; + str(y)) coins[name] = [x, y] Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim You will now see the physical XY-coordinates of the coin\u0026rsquo;s location relative to the center of the table. These coordinates are measured in meters.\n The robot can now be informed of locations on the table that it needs to move to for collecting the coins.\n"
-},
-{
-	"uri": "http://example.org/build-simulation/visualize_data/",
-	"title": "Visualize robot data",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 4 of main.launch.  \u0026lt;node name=\u0026quot;rviz\u0026quot; pkg=\u0026quot;rviz\u0026quot; type=\u0026quot;rviz\u0026quot; respawn=\u0026quot;false\u0026quot; output=\u0026quot;screen\u0026quot; args=\u0026quot;-f world -d $(find robomaker_workshop)/rviz/px100.rviz\u0026quot;\u0026gt; \u0026lt;/node\u0026gt; Run the ROS application.  roslaunch robomaker_workshop main.launch The RViz GUI should appear on the virtual desktop. Take a few moments to explore its various components, and get an understanding of how RViz shows the camera livestream from our simulated Gazebo world.  "
-},
-{
-	"uri": "http://example.org/cleanup/aws_resources/",
-	"title": "AWS Resources Cleanup",
-	"tags": [],
-	"description": "",
-	"content": "Now that you have finished with the workshop we want to make sure that you clean up all the resources that were deployed.\n Navigate the AWS CloudFormation console and Delete the stack created earlier.  "
-},
-{
-	"uri": "http://example.org/add-intelligence/command_robot/",
-	"title": "Command robot to fetch",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 5 of main.launch.  rospy.logwarn(\u0026quot;Press Enter to instruct robot to pick a coin\u0026quot;) raw_input() robot = PX100(simulated = _sim) for name, position in coins.items(): robot.home() robot.open_gripper() x = position[0] y = position[1] rospy.loginfo(\u0026quot;Picking up %s...\u0026quot; % name) success = robot.go_to([x, y, 0.01]) if success: robot.close_gripper() robot.home() robot.deposit() rospy.loginfo(\u0026quot;No more coins. Going to sleep...\u0026quot;) robot.sleep() Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The simulated robot arm will calculate an appropriate trajectory for moving to a coin\u0026rsquo;s location, pick up the coin, and deposit it at a pre-defined location. The robot will do this for each of the coins found in the previous steps.\n In case the robot is unable to grasp the coin in its first attempt, simply rerun the script. Since our machine learning model is built to handle dynamic scenarios, the coin will be accurately located even if it has been randomly nudged around by the robot arm during previous attempts.\n"
-},
-{
-	"uri": "http://example.org/build-simulation/integrate_planning/",
-	"title": "Integrate planning toolkit",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 5 of main.launch.  \u0026lt;include file=\u0026quot;$(find interbotix_xsarm_moveit)/launch/move_group.launch\u0026quot;\u0026gt; \u0026lt;arg name=\u0026quot;robot_model\u0026quot; value=\u0026quot;$(arg robot_model)\u0026quot;/\u0026gt; \u0026lt;arg name=\u0026quot;dof\u0026quot; value=\u0026quot;$(arg dof)\u0026quot;/\u0026gt; \u0026lt;/include\u0026gt; Run the ROS application. No GUI changes are expected at this point.  roslaunch robomaker_workshop main.launch Confirm that the planning interface has been succesfully set up.  rostopic list | grep move_group About twenty new ROS topics should have been set up by MoveIt to allow for motion planning.\nInterestingly, MoveIt adds a large number of key-value pairs to the ROS Parameter Server. These are used by MoveIt algorithms for planning and executing trajectories with a robot.  rosparam list | grep move_group Well over a hundred ROS parameters should now be printed in the terminal. You do not need to understand these parameters for the purposes of this workshop.\n"
-},
-{
-	"uri": "http://example.org/model-training/invoke_model/",
-	"title": "Invoke trained model",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 5 of main.launch.  rospy.logwarn(\u0026quot;Press Enter to instruct robot to pick a coin\u0026quot;) raw_input() robot = PX100(simulated = _sim) for name, position in coins.items(): robot.home() robot.open_gripper() x = position[0] y = position[1] rospy.loginfo(\u0026quot;Picking up %s...\u0026quot; % name) success = robot.go_to([x, y, 0.01]) if success: robot.close_gripper() robot.home() robot.deposit() rospy.loginfo(\u0026quot;No more coins. Going to sleep...\u0026quot;) robot.sleep() Run the main.py script in simulation mode. Press Enter as prompted by the script.  python main.py --sim The simulated robot arm will calculate an appropriate trajectory for moving to a coin\u0026rsquo;s location, pick up the coin, and deposit it at a pre-defined location. The robot will do this for each of the coins found in the previous steps.\n In case the robot is unable to grasp the coin in its first attempt, simply rerun the script. Since our machine learning model is built to handle dynamic scenarios, the coin will be accurately located even if it has been randomly nudged around by the robot arm during previous attempts.\n"
-},
-{
-	"uri": "http://example.org/cleanup/",
-	"title": "Wrap Up",
-	"tags": [],
-	"description": "",
-	"content": "Wrap Up  Delete AWS Resources via CloudFormation Manually delete AWS resources created by the code  "
-},
-{
-	"uri": "http://example.org/build-simulation/test_movement/",
-	"title": "Test robot movement",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 6 of main.launch.  \u0026lt;node pkg=\u0026quot;robomaker_workshop\u0026quot; name=\u0026quot;init\u0026quot; type=\u0026quot;init.py\u0026quot; output=\u0026quot;screen\u0026quot; /\u0026gt; Run the ROS application.  roslaunch robomaker_workshop main.launch Check out the Gazebo window. The simulated arm should become animated and move to its sleep position.  The same effect can be achieved by running the python script independently of the launch file.\nComment out the code added under Step 6 of main.launch.  \u0026lt;!-- \u0026lt;node pkg=\u0026quot;robomaker_workshop\u0026quot; name=\u0026quot;init\u0026quot; type=\u0026quot;init.py\u0026quot; output=\u0026quot;screen\u0026quot; /\u0026gt; --\u0026gt; Run the application again. The robot arm will appear in its default upright position.  roslaunch robomaker_workshop main.launch Now execute the init.py script from the /scripts folder.  cd ~/environment/aws_ws/src/robomaker_workshop/scripts python init.py Head over to the virtual desktop and you will see the arm once again curl up as previously to its sleep position.\n Before proceeding, remember to add back the init node statement in the launch file. We will start all our robot operations from this sleep position from now on.\n"
-},
-{
-	"uri": "http://example.org/build-simulation/start_image_capture/",
-	"title": "Start image capture service",
-	"tags": [],
-	"description": "",
-	"content": " Add the following code snippet under STEP 7 of main.launch.  \u0026lt;node name=\u0026quot;image_saver\u0026quot; pkg=\u0026quot;image_view\u0026quot; type=\u0026quot;image_saver\u0026quot; output=\u0026quot;screen\u0026quot;\u0026gt; \u0026lt;remap from=\u0026quot;image\u0026quot; to=\u0026quot;camera/image_raw\u0026quot; /\u0026gt; \u0026lt;param name=\u0026quot;save_all_image\u0026quot; value=\u0026quot;false\u0026quot; /\u0026gt; \u0026lt;param name=\u0026quot;filename_format\u0026quot; value=\u0026quot;$(find robomaker_workshop)/scripts/image_%04d.png\u0026quot; /\u0026gt; \u0026lt;/node\u0026gt; Run the ROS application.  roslaunch robomaker_workshop main.launch Confirm that the image capture service has started.  rosservice list | grep image_saver Of particular interest to us is the /image_saver/save service. We will be invoking this service to captures images from the live camera stream.\n"
-},
-{
-	"uri": "http://example.org/cleanup/signup/",
-	"title": "Sign up",
-	"tags": [],
-	"description": "",
-	"content": "Periodically we may have updates to this workshop that reflect improvements to existing modules. This might occur due to a new service or feature that simplifies how you accomplish an outcome we\u0026rsquo;ve addressed. We also plan to add additional modules that extend the base workshop.\nSend an email to kevinol@amazon.com if you\u0026rsquo;re interested in receiving an email update when changes are released.\n"
-},
-{
-	"uri": "http://example.org/",
-	"title": "Title",
+	"uri": "https://aws.amazon.com/1-overview/",
+	"title": "Overview",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://example.org/categories/",
+	"uri": "https://aws.amazon.com/1-overview/1_business_outcome/",
+	"title": "Business Outcome",
+	"tags": [],
+	"description": "",
+	"content": "Business Outcome Enable robots to autonomously identify and manipulate objects in their environment\nLearning Objectives "
+},
+{
+	"uri": "https://aws.amazon.com/1-overview/2_technical_outcome/",
+	"title": "Technical Outcome",
+	"tags": [],
+	"description": "",
+	"content": "Technical Outcome Build a ROS application that enables a robot to autonomously identify and fetch randomly placed objects in its environment\n"
+},
+{
+	"uri": "https://aws.amazon.com/1-overview/3_system_architecture/",
+	"title": "System Architecture",
+	"tags": [],
+	"description": "",
+	"content": "System Architecture "
+},
+{
+	"uri": "https://aws.amazon.com/2-setup/",
+	"title": "Setup",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://aws.amazon.com/2-setup/1_create_iam_users/",
+	"title": "Create IAM Users",
+	"tags": [],
+	"description": "",
+	"content": "Create IAM Users  From your AWS console, go to the IAM dashboard and select Users from the left column.  Click on Add User and provide a name for the new user. Allow both access types, leaving default selections for the password options. Then click on Next: Permissions.  Select Attach existing policies directly and choose the AdministratorAccess policy. Then click on Next: Tags.  Skip adding tags and click on Next: Review. Then click on Create User.  Copy all credentials from the next page and share these only with the teammate for whom you created this resource. The Secret Access Key and the Password will never be retrievable after this screen is closed. Email login instructions to your teammate for good measure.  Repeat these steps for each member of your team, including yourself. The newly created user will appear in your list of IAM Users.    Note that all IAM users use a dedicated sign-in URL to log in to the AWS account. This URL can always be retrieved from your IAM dashboard.\n "
+},
+{
+	"uri": "https://aws.amazon.com/2-setup/2_configure_cloud9/",
+	"title": "Configure Cloud9 IDE",
+	"tags": [],
+	"description": "",
+	"content": "Configure Cloud9 IDE  Go to the AWS RoboMaker dashboard and select Development environments from the left column.   Do not spawn an IDE directly from the Cloud9 console as it will not come preconfigured with ROS-specific tools.\n Click on Create development environment, provide a name for the resource, and choose Melodic for the ROS distribution. Select c4.8xlarge for instance type, leaving all other options as default. Then click Create.  The IDE will open up in a new tab and spin up any required resources. This usually takes a few minutes. Once the IDE is active, click on the gear icon in the top-right corner of the window.  In the Preferences tab, scroll down to select AWS Settings, then choose Credentials. Toggle the switch against AWS managed temporary credentials. We want this setting disabled for the exercise.  Add your IAM user credentials to the machine via the terminal.  aws configure Follow the prompts and enter your Access Key ID and Secret Access Key. When prompted for a default region name, type in us-east-1. For default output format, type in json.  "
+},
+{
+	"uri": "https://aws.amazon.com/2-setup/3_set_up_project/",
+	"title": "Set up ROS project",
+	"tags": [],
+	"description": "",
+	"content": "Set up ROS project  Fetch and run the setup script for configure your ROS workspace.  curl https://raw.githubusercontent.com/adi3/robomaker_workshop/master/setup.sh \u0026gt; setup.sh source setup.sh This script will take several minutes to finish. While the environment is being readied, let us learn a little about the Robot Operating System, often abbreviated as ROS.\n Click on Virtual Desktop at the top, then select Launch Virtual Desktop to open up the Ubuntu desktop GUI.  An Ubuntu GUI will open up in a new tab in your browser. Cancel any prompts for software upgrades that you might be presented with.   If launching the Virtual Desktop fails for some reason, simply wait a few seconds, refresh the Cloud9 tab and execute Step 2 again.\n Launch the ROS application, and confirm that it runs without errors. No GUI is expected to appear yet.  roslaunch robomaker_workshop main.launch   The starter code for our ROS application is now all set up and ready for our changes. Explore application topography by looking at output from the following commands:\n rostopic list rosnode list rosparam list You can press Ctrl+C in the terminal anytime to shut down the running ROS application. This is considered a clean way of exiting a process in the world of ROS.\n"
+},
+{
+	"uri": "https://aws.amazon.com/2-setup/4_robot_os/",
+	"title": "Robot Operating System",
+	"tags": [],
+	"description": "",
+	"content": "Robot Operating System "
+},
+{
+	"uri": "https://aws.amazon.com/2-setup/4_robot_os/a_ros_terminology/",
+	"title": "ROS Terminology",
+	"tags": [],
+	"description": "",
+	"content": "ROS Terminology "
+},
+{
+	"uri": "https://aws.amazon.com/2-setup/4_robot_os/b_aws_robomaker/",
+	"title": "AWS RoboMaker",
+	"tags": [],
+	"description": "",
+	"content": "AWS RoboMaker "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/",
+	"title": "Build Simulation",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/1_gazebo/",
+	"title": "Gazebo",
+	"tags": [],
+	"description": "",
+	"content": "Gazebo "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/1_gazebo/a_why_simulate/",
+	"title": "Why simulate?",
+	"tags": [],
+	"description": "",
+	"content": "Why simulate? "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/2_initiate_sim_world/",
+	"title": "Initiate simulation world",
+	"tags": [],
+	"description": "",
+	"content": "Initiate simulation world  Open the main.launch file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; launch -\u0026gt; main.launch Add the following code snippet under STEP 1 of main.launch. Then hit save.  \u0026lt;include file=\u0026quot;$(find gazebo_ros)/launch/empty_world.launch\u0026quot;\u0026gt; \u0026lt;arg name=\u0026quot;world_name\u0026quot; value=\u0026quot;$(arg world_name)\u0026quot;/\u0026gt; \u0026lt;/include\u0026gt; Press Ctrl+C to shut down the running ROS application. Then run it again.  roslaunch robomaker_workshop main.launch Go to the virtual desktop to view our Gazebo world.  You should see a black table with a few colorful coins on it. Take a few moments to familiarize yourself with the Gazebo GUI and the various options it offers.\n"
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/3_robot_descriptions/",
+	"title": "Robot descriptions",
+	"tags": [],
+	"description": "",
+	"content": "Robot descriptions "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/3_robot_descriptions/a_robotic_arms/",
+	"title": "Robotic arms",
+	"tags": [],
+	"description": "",
+	"content": "Robotic arms "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/3_robot_descriptions/b_urdf/",
+	"title": "URDF",
+	"tags": [],
+	"description": "",
+	"content": "Unified Robot Description Format (URDF) "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/4_broadcast_robot_desc/",
+	"title": "Broadcast robot description",
+	"tags": [],
+	"description": "",
+	"content": "Broadcast robot description  Open the main.launch file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; launch -\u0026gt; main.launch Add the following code snippet under STEP 2 of main.launch. Then hit save.  \u0026lt;param name=\u0026quot;robot_description\u0026quot; command=\u0026quot;xacro $(find robomaker_workshop)/urdf/$(arg robot_model).urdf.xacro\u0026quot; /\u0026gt; \u0026lt;node name=\u0026quot;robot_state_publisher\u0026quot; pkg=\u0026quot;robot_state_publisher\u0026quot; type=\u0026quot;robot_state_publisher\u0026quot; /\u0026gt; \u0026lt;node pkg=\u0026quot;gazebo_ros\u0026quot; name=\u0026quot;urdf_spawner\u0026quot; type=\u0026quot;spawn_model\u0026quot; respawn=\u0026quot;false\u0026quot; output=\u0026quot;screen\u0026quot; args=\u0026quot;-urdf -model $(arg robot_model) -param robot_description -x $(arg x_offset) -z $(arg table_height)\u0026quot; /\u0026gt; Press Ctrl+C to shut down the running ROS application. Then relaunch it.  roslaunch robomaker_workshop main.launch Go to the virtual desktop and confirm that the robot arm appears in the simulated world.    You can check out the raw robot information being broadcasted by printing the associated ROS parameter. This parameter holds the XML output describing the form-factor and physics of the robot.\n Confirm that your ROS application is still running. In a new terminal tab, poll the ROS Parameter Server for the robot\u0026rsquo;s description.  rosparam get -p /robot_description "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/5_robot_controllers/",
+	"title": "Robot controllers",
+	"tags": [],
+	"description": "",
+	"content": "Robot controllers "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/6_set_up_controllers/",
+	"title": "Set up controllers",
+	"tags": [],
+	"description": "",
+	"content": "Set up controllers  Open the main.launch file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; launch -\u0026gt; main.launch Add the following code snippet under STEP 3 of main.launch. Then hit save.  \u0026lt;rosparam command=\u0026quot;load\u0026quot; file=\u0026quot;$(find robomaker_workshop)/config/controllers.yaml\u0026quot; /\u0026gt; \u0026lt;node pkg=\u0026quot;controller_manager\u0026quot; name=\u0026quot;controller\u0026quot; type=\u0026quot;controller_manager\u0026quot; respawn=\u0026quot;false\u0026quot; output=\u0026quot;screen\u0026quot; args=\u0026quot;spawn arm_controller gripper_controller joint_state_controller\u0026quot; /\u0026gt; Press Ctrl+C to shut down the running ROS application. Then relaunch it.  roslaunch robomaker_workshop main.launch Confirm that the interface for executing robot control has been successfully set up. Around two dozen ROS topics spawned by the controller_manager package should appear in the output.  rostopic list | grep controller Our Gazebo simulation will now show torques being applied to the virtual robot arm.  "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/7_visualize_data/",
+	"title": "Visualize robot data",
+	"tags": [],
+	"description": "",
+	"content": "Visualize robot data  Open the main.launch file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; launch -\u0026gt; main.launch Add the following code snippet under STEP 4 of main.launch. Then hit save.  \u0026lt;node name=\u0026quot;rviz\u0026quot; pkg=\u0026quot;rviz\u0026quot; type=\u0026quot;rviz\u0026quot; respawn=\u0026quot;false\u0026quot; output=\u0026quot;screen\u0026quot; args=\u0026quot;-f world -d $(find robomaker_workshop)/rviz/px100.rviz\u0026quot;\u0026gt; \u0026lt;/node\u0026gt; Press Ctrl+C to shut down the running ROS application. Then relaunch it.  roslaunch robomaker_workshop main.launch The RViz GUI should appear on the virtual desktop.  Pay special attention to the camera livestream of our simulated Gazebo world that shows up in Rviz.\n  You can check out the raw video data by manually subscribing to the ROS topic where the camera data is being published.\n rostopic echo /camera/image_raw "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/8_robot_kinematics/",
+	"title": "Robot kinematics",
+	"tags": [],
+	"description": "",
+	"content": "Robot kinematics "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/8_robot_kinematics/a_planning_trajectories/",
+	"title": "Planning trajectories",
+	"tags": [],
+	"description": "",
+	"content": "Planning trajectories "
+},
+{
+	"uri": "https://aws.amazon.com/3-build-simulation/9_integrate_moveit/",
+	"title": "Integrate MoveIt",
+	"tags": [],
+	"description": "",
+	"content": "Integrate MoveIt  Open the main.launch file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; launch -\u0026gt; main.launch Add the following code snippet under STEP 5 of main.launch. Then hit save.  \u0026lt;include file=\u0026quot;$(find interbotix_xsarm_moveit)/launch/move_group.launch\u0026quot;\u0026gt; \u0026lt;arg name=\u0026quot;robot_model\u0026quot; value=\u0026quot;$(arg robot_model)\u0026quot;/\u0026gt; \u0026lt;arg name=\u0026quot;dof\u0026quot; value=\u0026quot;$(arg dof)\u0026quot;/\u0026gt; \u0026lt;/include\u0026gt; Press Ctrl+C to shut down the running ROS application. Then relaunch it. The robot arm will appear in its default upright position.  roslaunch robomaker_workshop main.launch Open a new terminal tab and execute the init.py script in simulation mode.  python ~/environment/aws_ws/src/robomaker_workshop/scripts/init.py --sim Head over to the virtual desktop. The simulated arm will become animated and move to its sleep position.   The same effect can be achieved by running the python script automatically on application launch.\nAdd the following code snippet under STEP 6 of main.launch.  \u0026lt;node pkg=\u0026quot;robomaker_workshop\u0026quot; name=\u0026quot;init\u0026quot; type=\u0026quot;init.py\u0026quot; output=\u0026quot;screen\u0026quot; args=\u0026quot;--sim\u0026quot; /\u0026gt; Run the ROS application.  roslaunch robomaker_workshop main.launch Check out the Gazebo window and you will see the arm once again curl up as previously to its sleep position.    We can thus run arbitrary python scripts to interact with a robot both during application launch and after the application is already up and running.\n "
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/",
+	"title": "Add Intelligence",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/1_machine_learning/",
+	"title": "Machine Learning",
+	"tags": [],
+	"description": "",
+	"content": "Machine Learning "
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/1_machine_learning/a_rekognition/",
+	"title": "Amazon Rekognition",
+	"tags": [],
+	"description": "",
+	"content": "Amazon Rekognition "
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/1_machine_learning/b_dataset_labeling/",
+	"title": "Dataset labeling",
+	"tags": [],
+	"description": "",
+	"content": "Dataset labeling Amazon Rekognition provides an intuitive visual interface to make image labeling fast and simple.\nThe interface allows you to quickly identify and label specific objects in images using bounding boxes with an easy click-and-drag interface.\n"
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/1_machine_learning/c_model_inference/",
+	"title": "Model inference",
+	"tags": [],
+	"description": "",
+	"content": "Model inference A Rekognition Custom Labels model has already been trained and validated for you to use in this workshop.\n Simply provide an image to the Rekognition model endpoint and you will receive the identity and location of objects in it.\n "
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/2_snap_camera_image/",
+	"title": "Snap image from camera",
+	"tags": [],
+	"description": "",
+	"content": "Snap image from camera  Launch the ROS application if it is not already running.  roslaunch robomaker_workshop main.launch In a new terminal tab, call the ROS service in charge of capturing an image.  rosservice call /image_saver/save A snap of the camera stream will appear in the /images directory with the name image_cap.png.  ls ~/environment/aws_ws/src/robomaker_workshop/images/  Double-click on the file to view the image in Cloud9.\n"
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/3_confirm_model_access/",
+	"title": "Confirm model access",
+	"tags": [],
+	"description": "",
+	"content": "Confirm model access  Open the main.py file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; scripts -\u0026gt; main.py Add the following code snippet under STEP 1 of main.py. Then hit save.  rospy.loginfo(\u0026quot;Checking state of Rekognition model...\u0026quot;) status = util.model_status(project_name, model_name, access_profile) rospy.loginfo('Current model state: %s' % status) if status != 'RUNNING': rospy.logerr('Rekognition model needs to be in RUNNING state')   Python is senstitive to identation so make sure that the tabs and spaces in your code exactly match the code shown here.\n  Make sure the ROS application is running. Otherwise launch it now.  roslaunch robomaker_workshop main.launch Open a new terminal tab and run the main.py script in simulation mode.  python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim The terminal output should report the current model to be in the RUNNING state.\n[INFO] [1623011969.371301, 0.000000]: Checking state of Rekognition model... [INFO] [1623011969.626026, 1734.312000]: Current model state: RUNNING   Ask your presenter in case you are shown an AccessDenied error or if you find that the model is not running.\n "
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/4_infer_image_objects/",
+	"title": "Infer objects in image",
+	"tags": [],
+	"description": "",
+	"content": "Infer objects in image  Open the main.py file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; scripts -\u0026gt; main.py Add the following code snippet under STEP 2 of main.py. Then hit save.  labels = util.find_coins(IMAGE_NAME, model_arn, CONFIDENCE_THRESHOLD, access_profile) rospy.loginfo(\u0026#39;Found %dlabels in image\u0026#39; % len(labels)) util.print_labels(labels) util.display_labels(image, labels)   Python is senstitive to identation so make sure that the tabs and spaces in your code exactly match the code shown here.\n  Run the main.py script in simulation mode.  python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim The terminal will print out details of the objects detected by Amazon Rekognition.  Head over to the virtual desktop and you will see the snapped image superimposed with labels detected by the machine learning model.   Our model is thus able to reliably\n identify the right number of objects in the image categorize the objects as the correct type, and locate each object at its precise location  "
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/5_obtain_coordinates/",
+	"title": "Obtain physical coordinates",
+	"tags": [],
+	"description": "",
+	"content": "Obtain physical coordinates  Open the main.py file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; scripts -\u0026gt; main.py Add the following code snippet under STEP 3 of main.py. Then hit save.  rospy.loginfo(\u0026#39;Transforming pixels to physical coordinates...\u0026#39;) coins = {} for l in labels: name = l[\u0026#39;Name\u0026#39;] x, y = util.get_coin_position(l[\u0026#39;Geometry\u0026#39;][\u0026#39;BoundingBox\u0026#39;]) rospy.loginfo(name) rospy.loginfo(\u0026#39;\\tX: \u0026#39; + str(x) + \u0026#39; m\u0026#39;) rospy.loginfo(\u0026#39;\\tY: \u0026#39; + str(y) + \u0026#39; m\u0026#39;) coins[name] = [x, y]   Python is senstitive to identation so make sure that the tabs and spaces in your code exactly match the code shown here.\n  Run the main.py script in simulation mode.  python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim You will now see the physical XY-coordinates of the coin\u0026rsquo;s location relative to the center of the table. These coordinates are measured in meters.    The robot can now be informed of locations on the table that it needs to move to for collecting the coins.\n "
+},
+{
+	"uri": "https://aws.amazon.com/4-add-intelligence/6_command_robot/",
+	"title": "Command robot to fetch",
+	"tags": [],
+	"description": "",
+	"content": "Command robot to fetch  Open the main.py file located at the following path:  aws_ws -\u0026gt; src -\u0026gt; robomaker_workshop -\u0026gt; scripts -\u0026gt; main.py Add the following code snippet under STEP 4 of main.py. Then hit save.  for name, position in coins.items(): robot.home() robot.open_gripper() x = position[0] y = position[1] rospy.loginfo(\u0026quot;Picking up %s...\u0026quot; % name) success = robot.go_to([x, y, 0.01]) if success: robot.close_gripper() robot.home() robot.deposit() rospy.loginfo(\u0026quot;No more coins. Going to sleep...\u0026quot;) robot.sleep()   Python is senstitive to identation so make sure that the tabs and spaces in your code exactly match the code shown here.\n  Run the main.py script in simulation mode.  python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim The simulated robot arm will calculate an appropriate trajectory for moving to a coin\u0026rsquo;s location, pick up the coin, and deposit it at a pre-defined location. The robot will do this for each of the coins found in the previous steps.\n  In case the robot is unable to grasp the coin in its first attempt, simply rerun the script. Since our machine learning model is built to handle dynamic scenarios, the coin will be accurately located even if it has been randomly nudged around by the robot arm during previous attempts.\n "
+},
+{
+	"uri": "https://aws.amazon.com/5-train-ml-model/",
+	"title": "Train ML Model",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://aws.amazon.com/5-train-ml-model/1_initialize_rekognition/",
+	"title": "Initialize Rekognition",
+	"tags": [],
+	"description": "",
+	"content": "Initialize Rekognition The following steps need to be carried out only once for each team.\n  Go to the Amazon Rekognition console and choose Use Custom Labels from the left column.  Click on Datasets on the left.  You will be greeted by a pop-up prompting you to set up a S3 bucket for Amazon Rekognition. Click on Create S3 bucket.  A green banner at the top of the screen should confirm a successful setup.  "
+},
+{
+	"uri": "https://aws.amazon.com/5-train-ml-model/2_set_up_dataset/",
+	"title": "Set up images dataset",
+	"tags": [],
+	"description": "",
+	"content": "Set up images dataset  Execute the fetch_dataset.sh script, which grabs the images dataset to the S3 bucket you created in the previous step.  source ~/environment/aws_ws/src/robomaker_workshop/fetch_dataset.sh Copy the S3 Path printed out by the script at the end.  Head back to the Rekognition Custom Labels console and select Datasets on the left. Then click on Create dataset.  Enter a name for your dataset, preferably with your username in it so as to keep it unique within your team. Then select the Import images from Amazon S3 bucket option.  A new option will appear asking for your S3 folder location. Enter the S3 Path you copied above.  The images dataset will be created and presented to you in a grid layout, all set to be labelled.  "
+},
+{
+	"uri": "https://aws.amazon.com/5-train-ml-model/3_draw_bboxes/",
+	"title": "Draw bounding boxes",
+	"tags": [],
+	"description": "",
+	"content": "Draw bounding boxes  Click on Start Labeling on the top right of the dataset console.  The console will activate Labeling mode. Click on Add labels on the left.  In the pop-up that appears, choose the Add labels option and enter your labels one-by-one, each time pressing Add label to append it to the list. Once you have done putting in all your labels, click on Save.   We have 5 types of coins occuring in our images dataset, so we have added a label for each coin type above.\n Select all images in your dataset and click on Draw bounding box.  In the Rekognition labeling UI, select a label on the right and draw a box around where the corresponding object appears in the image. Do this for all objects occuring in the image.   Boxes can be drawn in the Rekognition Custom Labels UI by clicking anywhere on the image and dragging around the mouse cursor.\n Once all objects in the image have been labeled, click on Next on the top right.  Repeat this procedure for all images in the dataset and click on Done after labeling the last image.\nClick on Save changes, then hit Exit to deactive Labeling mode.    Your dataset is now labeled and ready to train a Machine Learning model.\n "
+},
+{
+	"uri": "https://aws.amazon.com/5-train-ml-model/4_initiate_training/",
+	"title": "Initiate model training",
+	"tags": [],
+	"description": "",
+	"content": "Initiate model training  Go back to the Rekognition Custom Labels console and select Projects on the left. Then click on Create project.  Give your project a name, preferably with your username in it so as to keep it unique within your team. Then click on Create project.  Choose the project you just created and click on Train new model.  Select your labeled dataset from the dropdown under Choose training dataset. For the Create test set option, select Split training dataset. Then scroll down and click Train.  Rekognition will initiate training your custom model and its status will be updated in the Projects panel.    Training this model will take a few hours. Continue this exercise once training is completed. Periodically check the model\u0026rsquo;s status in the Rekognition console to stay updated.\n "
+},
+{
+	"uri": "https://aws.amazon.com/5-train-ml-model/5_evaluate_results/",
+	"title": "Evaluate training results",
+	"tags": [],
+	"description": "",
+	"content": "Evaluate training results  Once your model is ready to run, its status will be changed to TRAINING COMPLETED in the Rekognition Custom Labels console.  Select your project and check out the various metrics describing the performance of the model against your labeled dataset in the Evaluation results section. The closer their value is to 1, the better is the model\u0026rsquo;s performance.   Rekognition also provides performane metrics for individual labels and the confidence with which the model can identify them in an image.\n Compare your model\u0026rsquo;s performance with that of your teammates. Choose the one with the highest F1 score and copy its ARN from the Use Model tab. In addition, click on Start to begin inference with this model.  "
+},
+{
+	"uri": "https://aws.amazon.com/6-deploy-application/",
+	"title": "Deploy Application",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://aws.amazon.com/6-deploy-application/1_register_on_botworks/",
+	"title": "Register on Botworks",
+	"tags": [],
+	"description": "",
+	"content": "Register on Botworks  Head over to the Botworks portal and click on Create account.  Type in a username, password and a valid email address. The phone field may be left empty. Then click on CREATE ACCOUNT.   We recommend your username and email address to be the same that you used for accessing the AWS console.\n You will soon receive an email with a 6-digit confirmation code at the address you provided above. Copy the code and paste it in the Botworks window. Then click CONFIRM.  You will be automatically signed in and presented with the Botworks Home view. You should see a planner with a few robots listed against it.    Take a few minutes to click around and explore the Botworks portal.\n "
+},
+{
+	"uri": "https://aws.amazon.com/6-deploy-application/2_connect_to_robot/",
+	"title": "Connect to remote robot",
+	"tags": [],
+	"description": "",
+	"content": "Connect to remote robot Only one user may connect to a robot at a time.\n  Click on an available slot against your team\u0026rsquo;s assigned robot to reserve yourself time on the hardware. You can drag your mouse to book multiple successive slots at once.   Make sure the current time falls between the start and end times of your booking. You can only connect to the robot when your booking window starts.\n Hover on your reservation to view details of the booking. Click on Start Session in the pop-up window.  You will be connected to the robot and an in-browser terminal will open up that gives you admin access to the robot.  From this terminal window, you can execute any command and carry out any ROS development as you would if the robot was sitting next to you.\n  If your terminal window seems stuck after printing a single $ sign as shown below, click on View Cameras and ensure that the camera livestream is turned off. Then restart your session. Inform the presenters in case the problem still persists.   Click on View Cameras on the left. An on-site camera associated with the robot will be displayed under Available Cameras. Click on the toggle switch next to the camera.  A low-latency livestream from the camera will be started. You can toggle the camera on and off through its switch at your will.  In case the camera view presents a blank window for more than 10 seconds, click on the camera\u0026rsquo;s toggle switch twice to restart the camera. This usually fixes the livestream. Always give the livestream a few seconds to go live before attempting to refresh it.    If the camera window remains blank even after troubleshooting, inform the presenters and they will hard-reset the camera connection for you.\n  Confirm that you are able to control the robot by executing a sample script on the hardware.  roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:=px100 use_rviz:=false \u0026amp; python ~/Desktop/random_dance.py The robot should become animated and attempt to reach randomly generated waypoints in an infinite loop. Press Ctrl+C in the terminal window to stop the script.\n"
+},
+{
+	"uri": "https://aws.amazon.com/6-deploy-application/3_set_up_application/",
+	"title": "Set up ROS application",
+	"tags": [],
+	"description": "",
+	"content": "Set up ROS application  Fetch and build the finished application to the remote robot.  git clone https://github.com/adi3/robomaker_workshop.git --branch completed --single-branch ~/aws_ws/src/robomaker_workshop cd ~/aws_ws catkin build source devel/setup.bash Open the main.py script in a command-line editor.  nano ~/aws_ws/src/robomaker_workshop/scripts/main.py Set the REAL_MODEL_ARN constant in main.py as the model ARN you copied at the end of the last section.   Press Ctrl+O followed by Enter to save a file in the nano editor. Press Ctrl+X to exit the application.\n  Configure your AWS credentials on the robot. These will be used by the ROS application to access your Rekognition model.  aws configure   A nifty way of testing your AWS credentials setup is by confirming that S3 buckets can be successfully listed by the terminal.\n aws s3 ls "
+},
+{
+	"uri": "https://aws.amazon.com/6-deploy-application/4_run_application/",
+	"title": "Run application on robot",
+	"tags": [],
+	"description": "",
+	"content": "Run application on robot  Confirm that the robot\u0026rsquo;s camera is switched off by opening the cameras panel. If the camera is still streaming, hit the toggle switch on the right to turn it off.   By default, a video device can only be used by one application at a time. We temporarily turn off the camera in Botworks so that it can be used by the image capturing service in our ROS application.\n  Capture a top-view image of the robot\u0026rsquo;s environment using the Overhead Cam.  fswebcam -r 640x480 --png 9 --no-banner ~/aws_ws/src/robomaker_workshop/images/image_cap.png A snap of the camera stream will appear in the /images directory with the name image_cap.png.  ls ~/aws_ws/src/robomaker_workshop/images/ Turn the camera back on using the same toggle switch as earlier.  Launch the ROS application, this time with a sim:=false flag since we are working on the physical device.  roslaunch robomaker_workshop main.launch sim:=false \u0026amp;  We start this script in the background by specifying the \u0026amp; flag so that we can use the same terminal window to execute the following steps as well.\n  Run the main.py script. Press Enter as prompted by the terminal.  python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --internal  The --internal flag tells the script that the Rekognition model exists in your own AWS account and not in an external one as it did for the simulation exercise.\n  You should see the robot arm start moving in the livestream and attempt to fetch the coins around it. Modify and re-run the script till you have picked up all the coins!\n Kill the background roslaunch process once you are finished working on the robot.  ps u | grep roslaunch | awk 'NR==1{print $2}' | xargs kill "
+},
+{
+	"uri": "https://aws.amazon.com/7-team-challenge/",
+	"title": "Team Challenge",
+	"tags": [],
+	"description": "",
+	"content": "Team Challenge Maximize the value of your deposit box in 3 minutes [GIF of real thing working\u0026hellip;]\n"
+},
+{
+	"uri": "https://aws.amazon.com/7-team-challenge/1_rulebook/",
+	"title": "Rulebook",
+	"tags": [],
+	"description": "",
+	"content": "   You will have 3 minutes to fetch as many coins as possible.\n You can re-run your script any number of times within the alloted period. You are not allowed to make changes to your script midway through a run.    There are 5 coin types relevant to this exercise, each made with a different color for easier identification:\n Bitcoin: red Etherium: grey Litecoin: blue Dash: green Monero: yellow    The value of a coin is determined by the price shown on CoinMarketCap at the start of the competition.\n  At the start of your turn, you will have 5 coins - one of each type - randomly placed around the robot.\n The coins will be placed such that they are within physical reach of the robot arm.      You will have 90 minutes to prepare and test your code for competing in the challenge. Use the application we have built so far as the starting point. Some areas you could work on include:\n Priortizing the order in which the robot attempts to fetch the coins. Trying out different Rekognition models produced within your team. Experimenting with the confidence threshold parameter for each of the models. Fine-tuning the mathematical formula which converts Rekognition output to physical coordinates.   Make sure you start up all of your team\u0026rsquo;s Rekognition models right away as they take several minutes to initialize and get running.\n   A coin will be counted towards your final score if it has been picked up and dropped in the deposit area of the robot.\n If the robot fails to pick up a coin or drops it on the way to the deposit location, it will not be counted towards your final tally. You can, however, run your script again and re-attempt to fetch the coin. If a coin rolls around or falls off the table after it has been dropped in the deposit zone, it will still be considered a successful pick up.   See how you might use Gazebo to test your code in a virtual environment before running it on the physical arm.\n   When you are ready, connect to your team\u0026rsquo;s robot via Botworks, and conduct any testing and optimization on the real hardware.\n The robot assigned to your team will contain your team name in its listing on Botworks. You are free to connect to your team\u0026rsquo;s robot at any point for any duration during the 90-minute preparation window. Only the performance of your script on the real hardware counts; any work done in simulation is just a means to an end.    Your coins will likely move around and fall off the table as you run tests on the robot hardware. Not to worry; ask the on-site moderators to place your desired number and type of coins around the robot at any point during the preparation window.\n Send a private message to the on-site moderators with your team name and your desired number/type of coins in the following format. We will place the requested assortment around your robot.  Team Red: bitcoin, etherium, litecoin, monero  You can make such requests any number of times from the moderators.    Stick to your own hardware. Booking sessions on another team\u0026rsquo;s robot will lead to instant disqualification.\n We all can see who is booking a session on which robot. If you accidently book a session you didn\u0026rsquo;t mean to, cancel it immediately.\n   "
+},
+{
+	"uri": "https://aws.amazon.com/8-wrap-up/",
+	"title": "Wrap Up",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://aws.amazon.com/8-wrap-up/delete_aws_resources/",
+	"title": "Delete AWS resources",
+	"tags": [],
+	"description": "",
+	"content": "Delete AWS resources  Delete the Rekognition dataset you uploaded to S3.  aws s3 rb s3://$(aws s3 ls | awk '{print $3}' | grep \u0026quot;custom-labels-console\u0026quot;) --force Go to Development environments in the AWS RoboMaker dashboard. Select the environment you created for this workshop and click Delete.  Navigate to your project in the Rekognition Customs Labels dashboard. Choose your model, click on Use Model and then press Stop.  Connect to your team\u0026rsquo;s robot via Botworks and wipe off your AWS credentials from the machine.  rm -rf ~/.aws "
+},
+{
+	"uri": "https://aws.amazon.com/8-wrap-up/keep_in_touch/",
+	"title": "Keep in touch",
+	"tags": [],
+	"description": "",
+	"content": "Keep in touch See how far you can take the tenets of cloud robotics towards benefiting your organization.\n  Play around with the ROS application and integrate more AWS services into it. There are several ready-to-use ROS cloud extensions provided by AWS for you to experiment with, and you can build custom ones yourself using the AWS SDK.\n  Send a message to adsnghw@amazon.com if you have any questions or feedback. We\u0026rsquo;d love to hear from you!\n"
+},
+{
+	"uri": "https://aws.amazon.com/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://example.org/tags/",
+	"uri": "https://aws.amazon.com/tags/",
 	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://aws.amazon.com/",
+	"title": "Title",
 	"tags": [],
 	"description": "",
 	"content": ""

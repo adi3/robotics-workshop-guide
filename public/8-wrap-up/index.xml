@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wrap Up on Cloud Robotics with AWS</title>
+    <link>https://aws.amazon.com/8-wrap-up/</link>
+    <description>Recent content in Wrap Up on Cloud Robotics with AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aws.amazon.com/8-wrap-up/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Delete AWS resources</title>
+      <link>https://aws.amazon.com/8-wrap-up/delete_aws_resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/8-wrap-up/delete_aws_resources/</guid>
+      <description>Delete AWS resources  Delete the Rekognition dataset you uploaded to S3.  aws s3 rb s3://$(aws s3 ls | awk &#39;{print $3}&#39; | grep &amp;quot;custom-labels-console&amp;quot;) --force Go to Development environments in the AWS RoboMaker dashboard. Select the environment you created for this workshop and click Delete.  Navigate to your project in the Rekognition Customs Labels dashboard. Choose your model, click on Use Model and then press Stop.  Connect to your team&amp;rsquo;s robot via Botworks and wipe off your AWS credentials from the machine.</description>
+    </item>
+    
+    <item>
+      <title>Keep in touch</title>
+      <link>https://aws.amazon.com/8-wrap-up/keep_in_touch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/8-wrap-up/keep_in_touch/</guid>
+      <description>Keep in touch See how far you can take the tenets of cloud robotics towards benefiting your organization.
+  Play around with the ROS application and integrate more AWS services into it. There are several ready-to-use ROS cloud extensions provided by AWS for you to experiment with, and you can build custom ones yourself using the AWS SDK.
+  Send a message to adsnghw@amazon.com if you have any questions or feedback.</description>
+    </item>
+    
+  </channel>
+</rss>

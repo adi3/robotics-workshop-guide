@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Add Intelligence on Cloud Robotics with AWS</title>
+    <link>https://aws.amazon.com/4-add-intelligence/</link>
+    <description>Recent content in Add Intelligence on Cloud Robotics with AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aws.amazon.com/4-add-intelligence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Snap image from camera</title>
+      <link>https://aws.amazon.com/4-add-intelligence/2_snap_camera_image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/4-add-intelligence/2_snap_camera_image/</guid>
+      <description>Snap image from camera  Launch the ROS application if it is not already running.  roslaunch robomaker_workshop main.launch In a new terminal tab, call the ROS service in charge of capturing an image.  rosservice call /image_saver/save A snap of the camera stream will appear in the /images directory with the name image_cap.png.  ls ~/environment/aws_ws/src/robomaker_workshop/images/  Double-click on the file to view the image in Cloud9.</description>
+    </item>
+    
+    <item>
+      <title>Confirm model access</title>
+      <link>https://aws.amazon.com/4-add-intelligence/3_confirm_model_access/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/4-add-intelligence/3_confirm_model_access/</guid>
+      <description>Confirm model access  Open the main.py file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; scripts -&amp;gt; main.py Add the following code snippet under STEP 1 of main.py. Then hit save.  rospy.loginfo(&amp;quot;Checking state of Rekognition model...&amp;quot;) status = util.model_status(project_name, model_name, access_profile) rospy.loginfo(&#39;Current model state: %s&#39; % status) if status != &#39;RUNNING&#39;: rospy.logerr(&#39;Rekognition model needs to be in RUNNING state&#39;)   Python is senstitive to identation so make sure that the tabs and spaces in your code exactly match the code shown here.</description>
+    </item>
+    
+    <item>
+      <title>Infer objects in image</title>
+      <link>https://aws.amazon.com/4-add-intelligence/4_infer_image_objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/4-add-intelligence/4_infer_image_objects/</guid>
+      <description>Infer objects in image  Open the main.py file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; scripts -&amp;gt; main.py Add the following code snippet under STEP 2 of main.py. Then hit save.  labels = util.find_coins(IMAGE_NAME, model_arn, CONFIDENCE_THRESHOLD, access_profile) rospy.loginfo(&amp;#39;Found %dlabels in image&amp;#39; % len(labels)) util.print_labels(labels) util.display_labels(image, labels)   Python is senstitive to identation so make sure that the tabs and spaces in your code exactly match the code shown here.</description>
+    </item>
+    
+    <item>
+      <title>Obtain physical coordinates</title>
+      <link>https://aws.amazon.com/4-add-intelligence/5_obtain_coordinates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/4-add-intelligence/5_obtain_coordinates/</guid>
+      <description>Obtain physical coordinates  Open the main.py file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; scripts -&amp;gt; main.py Add the following code snippet under STEP 3 of main.py. Then hit save.  rospy.loginfo(&amp;#39;Transforming pixels to physical coordinates...&amp;#39;) coins = {} for l in labels: name = l[&amp;#39;Name&amp;#39;] x, y = util.get_coin_position(l[&amp;#39;Geometry&amp;#39;][&amp;#39;BoundingBox&amp;#39;]) rospy.loginfo(name) rospy.loginfo(&amp;#39;\tX: &amp;#39; + str(x) + &amp;#39; m&amp;#39;) rospy.loginfo(&amp;#39;\tY: &amp;#39; + str(y) + &amp;#39; m&amp;#39;) coins[name] = [x, y]   Python is senstitive to identation so make sure that the tabs and spaces in your code exactly match the code shown here.</description>
+    </item>
+    
+    <item>
+      <title>Command robot to fetch</title>
+      <link>https://aws.amazon.com/4-add-intelligence/6_command_robot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/4-add-intelligence/6_command_robot/</guid>
+      <description>Command robot to fetch  Open the main.py file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; scripts -&amp;gt; main.py Add the following code snippet under STEP 4 of main.py. Then hit save.  for name, position in coins.items(): robot.home() robot.open_gripper() x = position[0] y = position[1] rospy.loginfo(&amp;quot;Picking up %s...&amp;quot; % name) success = robot.go_to([x, y, 0.01]) if success: robot.close_gripper() robot.home() robot.deposit() rospy.loginfo(&amp;quot;No more coins. Going to sleep.</description>
+    </item>
+    
+  </channel>
+</rss>

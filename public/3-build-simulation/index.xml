@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Build Simulation on Cloud Robotics with AWS</title>
+    <link>https://aws.amazon.com/3-build-simulation/</link>
+    <description>Recent content in Build Simulation on Cloud Robotics with AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aws.amazon.com/3-build-simulation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Initiate simulation world</title>
+      <link>https://aws.amazon.com/3-build-simulation/2_initiate_sim_world/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/3-build-simulation/2_initiate_sim_world/</guid>
+      <description>Initiate simulation world  Open the main.launch file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; launch -&amp;gt; main.launch Add the following code snippet under STEP 1 of main.launch. Then hit save.  &amp;lt;include file=&amp;quot;$(find gazebo_ros)/launch/empty_world.launch&amp;quot;&amp;gt; &amp;lt;arg name=&amp;quot;world_name&amp;quot; value=&amp;quot;$(arg world_name)&amp;quot;/&amp;gt; &amp;lt;/include&amp;gt; Press Ctrl+C to shut down the running ROS application. Then run it again.  roslaunch robomaker_workshop main.launch Go to the virtual desktop to view our Gazebo world.</description>
+    </item>
+    
+    <item>
+      <title>Broadcast robot description</title>
+      <link>https://aws.amazon.com/3-build-simulation/4_broadcast_robot_desc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/3-build-simulation/4_broadcast_robot_desc/</guid>
+      <description>Broadcast robot description  Open the main.launch file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; launch -&amp;gt; main.launch Add the following code snippet under STEP 2 of main.launch. Then hit save.  &amp;lt;param name=&amp;quot;robot_description&amp;quot; command=&amp;quot;xacro $(find robomaker_workshop)/urdf/$(arg robot_model).urdf.xacro&amp;quot; /&amp;gt; &amp;lt;node name=&amp;quot;robot_state_publisher&amp;quot; pkg=&amp;quot;robot_state_publisher&amp;quot; type=&amp;quot;robot_state_publisher&amp;quot; /&amp;gt; &amp;lt;node pkg=&amp;quot;gazebo_ros&amp;quot; name=&amp;quot;urdf_spawner&amp;quot; type=&amp;quot;spawn_model&amp;quot; respawn=&amp;quot;false&amp;quot; output=&amp;quot;screen&amp;quot; args=&amp;quot;-urdf -model $(arg robot_model) -param robot_description -x $(arg x_offset) -z $(arg table_height)&amp;quot; /&amp;gt; Press Ctrl+C to shut down the running ROS application.</description>
+    </item>
+    
+    <item>
+      <title>Robot controllers</title>
+      <link>https://aws.amazon.com/3-build-simulation/5_robot_controllers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/3-build-simulation/5_robot_controllers/</guid>
+      <description>Robot controllers </description>
+    </item>
+    
+    <item>
+      <title>Set up controllers</title>
+      <link>https://aws.amazon.com/3-build-simulation/6_set_up_controllers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/3-build-simulation/6_set_up_controllers/</guid>
+      <description>Set up controllers  Open the main.launch file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; launch -&amp;gt; main.launch Add the following code snippet under STEP 3 of main.launch. Then hit save.  &amp;lt;rosparam command=&amp;quot;load&amp;quot; file=&amp;quot;$(find robomaker_workshop)/config/controllers.yaml&amp;quot; /&amp;gt; &amp;lt;node pkg=&amp;quot;controller_manager&amp;quot; name=&amp;quot;controller&amp;quot; type=&amp;quot;controller_manager&amp;quot; respawn=&amp;quot;false&amp;quot; output=&amp;quot;screen&amp;quot; args=&amp;quot;spawn arm_controller gripper_controller joint_state_controller&amp;quot; /&amp;gt; Press Ctrl+C to shut down the running ROS application. Then relaunch it.  roslaunch robomaker_workshop main.launch Confirm that the interface for executing robot control has been successfully set up.</description>
+    </item>
+    
+    <item>
+      <title>Visualize robot data</title>
+      <link>https://aws.amazon.com/3-build-simulation/7_visualize_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/3-build-simulation/7_visualize_data/</guid>
+      <description>Visualize robot data  Open the main.launch file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; launch -&amp;gt; main.launch Add the following code snippet under STEP 4 of main.launch. Then hit save.  &amp;lt;node name=&amp;quot;rviz&amp;quot; pkg=&amp;quot;rviz&amp;quot; type=&amp;quot;rviz&amp;quot; respawn=&amp;quot;false&amp;quot; output=&amp;quot;screen&amp;quot; args=&amp;quot;-f world -d $(find robomaker_workshop)/rviz/px100.rviz&amp;quot;&amp;gt; &amp;lt;/node&amp;gt; Press Ctrl+C to shut down the running ROS application. Then relaunch it.  roslaunch robomaker_workshop main.launch The RViz GUI should appear on the virtual desktop.</description>
+    </item>
+    
+    <item>
+      <title>Integrate MoveIt</title>
+      <link>https://aws.amazon.com/3-build-simulation/9_integrate_moveit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/3-build-simulation/9_integrate_moveit/</guid>
+      <description>Integrate MoveIt  Open the main.launch file located at the following path:  aws_ws -&amp;gt; src -&amp;gt; robomaker_workshop -&amp;gt; launch -&amp;gt; main.launch Add the following code snippet under STEP 5 of main.launch. Then hit save.  &amp;lt;include file=&amp;quot;$(find interbotix_xsarm_moveit)/launch/move_group.launch&amp;quot;&amp;gt; &amp;lt;arg name=&amp;quot;robot_model&amp;quot; value=&amp;quot;$(arg robot_model)&amp;quot;/&amp;gt; &amp;lt;arg name=&amp;quot;dof&amp;quot; value=&amp;quot;$(arg dof)&amp;quot;/&amp;gt; &amp;lt;/include&amp;gt; Press Ctrl+C to shut down the running ROS application. Then relaunch it. The robot arm will appear in its default upright position.  roslaunch robomaker_workshop main.</description>
+    </item>
+    
+  </channel>
+</rss>

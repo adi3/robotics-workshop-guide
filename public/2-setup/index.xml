@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setup on Cloud Robotics with AWS</title>
+    <link>https://aws.amazon.com/2-setup/</link>
+    <description>Recent content in Setup on Cloud Robotics with AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aws.amazon.com/2-setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Attach access policy</title>
+      <link>https://aws.amazon.com/2-setup/attach_access_policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/2-setup/attach_access_policy/</guid>
+      <description>Log in to your AWS account with the credentials provided to you in the previous step. Go to IAM Users, then click on your user name to open the resource summary page. Select Add inline policy on the right.  On the Create policy page, choose the JSON tab and replace its contents with the following snippet.  { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: { &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;sts:AssumeRole&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:iam::517502204741:role/ResourcesForRoboticsWorkshop&amp;quot; } } Click on Review policy.</description>
+    </item>
+    
+    <item>
+      <title>Create IAM Users</title>
+      <link>https://aws.amazon.com/2-setup/1_create_iam_users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/2-setup/1_create_iam_users/</guid>
+      <description>Create IAM Users  From your AWS console, go to the IAM dashboard and select Users from the left column.  Click on Add User and provide a name for the new user. Allow both access types, leaving default selections for the password options. Then click on Next: Permissions.  Select Attach existing policies directly and choose the AdministratorAccess policy. Then click on Next: Tags.  Skip adding tags and click on Next: Review.</description>
+    </item>
+    
+    <item>
+      <title>Configure Cloud9 IDE</title>
+      <link>https://aws.amazon.com/2-setup/2_configure_cloud9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/2-setup/2_configure_cloud9/</guid>
+      <description>Configure Cloud9 IDE  Go to the AWS RoboMaker dashboard and select Development environments from the left column.   Do not spawn an IDE directly from the Cloud9 console as it will not come preconfigured with ROS-specific tools.
+ Click on Create development environment, provide a name for the resource, and choose Melodic for the ROS distribution. Select c4.8xlarge for instance type, leaving all other options as default. Then click Create.</description>
+    </item>
+    
+    <item>
+      <title>Set up ROS project</title>
+      <link>https://aws.amazon.com/2-setup/3_set_up_project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws.amazon.com/2-setup/3_set_up_project/</guid>
+      <description>Set up ROS project  Fetch and run the setup script for configure your ROS workspace.  curl https://raw.githubusercontent.com/adi3/robomaker_workshop/master/setup.sh &amp;gt; setup.sh source setup.sh This script will take several minutes to finish. While the environment is being readied, let us learn a little about the Robot Operating System, often abbreviated as ROS.
+ Click on Virtual Desktop at the top, then select Launch Virtual Desktop to open up the Ubuntu desktop GUI.</description>
+    </item>
+    
+  </channel>
+</rss>
