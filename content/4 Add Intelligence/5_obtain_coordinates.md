@@ -34,7 +34,7 @@ for l in labels:
 
 ---
 
-3. Run the _main.py_ script in simulation mode. Press Enter as prompted by the script.
+3. Run the _main.py_ script in simulation mode.
 
 ```
 python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim

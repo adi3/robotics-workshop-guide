@@ -20,13 +20,3 @@ pre = "5. "
 3. Compare your model's performance with that of your teammates. Choose the one with the highest F1 score and copy its ARN from the _Use Model_ tab. In addition, click on _Start_ to begin inference with this model.
 
 ![Start Model](/start-model.png?classes=border)
-
-4. Set the **REAL_MODEL** constant in _main.py_ as the model ARN you just copied.
-
-```
-REAL_MODEL_ARN = "arn:aws:rekognition:us-east-1:517502204741:project/adsnghw-px100/version/adsnghw-px100.2021-06-15T14.06.53/1623758813864"
-```
-
----
-
-> Executing the **main.py** script without the _--sim_ flag will make it invoke the Rekognition model described by REAL_MODEL_ARN.

@@ -7,7 +7,7 @@ pre = "1. "
 
 # Register on Botworks
 
-1. Head over to the [Botworks](https://dev.d1ma7f8muz7c4s.amplifyapp.com/) portal and click on **Create account**.
+1. Head over to the [Botworks](https://dev.d1aqmxpt45hipw.amplifyapp.com/) portal and click on **Create account**.
 
 ![Botworks Login](/botworks-login.png?classes=border)
 

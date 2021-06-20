@@ -19,6 +19,14 @@ roslaunch robomaker_workshop main.launch
 rosservice call /image_saver/save
 ```
 
-4. A snap of the camera stream will appear in your _/robomaker_workshop_ directory with the name **image_cap.png**. Double-click on the file to view the image in Cloud9.
+3. A snap of the camera stream will appear in the _/images_ directory with the name **image_cap.png**.
+
+```
+ls ~/environment/aws_ws/src/robomaker_workshop/images/
+```
+
+---
+
+Double-click on the file to view the image in Cloud9.
 
 ![Camera stream snap](/stream-snap.png?classes=border)

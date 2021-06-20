@@ -36,7 +36,7 @@ if status != 'RUNNING':
 roslaunch robomaker_workshop main.launch
 ```
 
-4. Open a new terminal tab and run the _main.py_ script in simnulation mode.
+4. Open a new terminal tab and run the _main.py_ script in simulation mode.
 
 ```
 python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --sim

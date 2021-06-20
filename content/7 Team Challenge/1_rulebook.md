@@ -15,7 +15,7 @@ pre = "<b>1. </b>"
 - There are 5 coin types relevant to this exercise, each made with a different color for easier identification:
 
   - Bitcoin: red
-  - Etherium: gray
+  - Etherium: grey
   - Litecoin: blue
   - Dash: green
   - Monero: yellow
@@ -55,10 +55,10 @@ pre = "<b>1. </b>"
   - Send a private message to the on-site moderators with your team name and your desired number/type of coins in the following format. We will place the requested assortment around your robot.
 
   ```
-  Team Alpha: bitcoin, etherium, litecoin, monero
+  Team Red: bitcoin, etherium, litecoin, monero
   ```
 
   - You can make such requests any number of times from the moderators.
 
-- Stick to your own hardware. Booking sessions on another team's robot will lead to instant disqualification.
+- **Stick to your own hardware.** Booking sessions on another team's robot will lead to instant disqualification.
   > We all can see who is booking a session on which robot. If you accidently book a session you didn't mean to, cancel it immediately.
