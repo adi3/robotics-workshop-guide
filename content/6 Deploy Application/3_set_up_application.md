@@ -15,8 +15,6 @@ git clone https://github.com/adi3/robomaker_workshop.git --branch completed --si
 cd ~/environment/aws_ws
 
 catkin build
-
-source devel/setup.bash
 ```
 
 2. Open the _main.py_ script in a command-line editor.
