@@ -18,13 +18,13 @@ pre = "4. "
 2. Capture a top-view image of the robot's environment using the _Overhead Cam_.
 
 ```
-fswebcam -r 640x480 --png 9 --no-banner ~/aws_ws/src/robomaker_workshop/images/image_cap.png
+fswebcam -r 640x480 --png 9 --no-banner ~/environment/aws_ws/src/robomaker_workshop/images/image_cap.png
 ```
 
 3. A snap of the camera stream will appear in the _/images_ directory with the name **image_cap.png**.
 
 ```
-ls ~/aws_ws/src/robomaker_workshop/images/
+ls ~/environment/aws_ws/src/robomaker_workshop/images/
 ```
 
 4. Turn the camera back on using the same toggle switch as earlier.
@@ -44,7 +44,7 @@ roslaunch robomaker_workshop main.launch sim:=false &
 6. Run the _main.py_ script. Press Enter as prompted by the terminal.
 
 ```
-python ~/aws_ws/src/robomaker_workshop/scripts/main.py --internal
+python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --internal
 ```
 
 > The `--internal` flag tells the script that the Rekognition model exists in your own AWS account and not in an external one as it did for the simulation exercise.

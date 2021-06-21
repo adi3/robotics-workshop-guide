@@ -10,7 +10,7 @@ pre = "3. "
 1. Fetch and build the finished application to the remote robot.
 
 ```
-git clone https://github.com/adi3/robomaker_workshop.git --branch completed --single-branch ~/aws_ws/src/robomaker_workshop
+git clone https://github.com/adi3/robomaker_workshop.git --branch completed --single-branch ~/environment/aws_ws/src/robomaker_workshop
 
 cd ~/aws_ws
 
@@ -22,7 +22,7 @@ source devel/setup.bash
 2. Open the _main.py_ script in a command-line editor.
 
 ```
-nano ~/aws_ws/src/robomaker_workshop/scripts/main.py
+nano ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py
 ```
 
 3. Set the **REAL_MODEL_ARN** constant in _main.py_ as the model ARN you copied at the end of the last section.
