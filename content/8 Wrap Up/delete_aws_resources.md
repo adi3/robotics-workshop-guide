@@ -26,3 +26,9 @@ aws s3 rb s3://$(aws s3 ls | awk '{print $3}' | grep "custom-labels-console") --
 ```
 rm -rf ~/.aws
 ```
+
+5. Delete your ROS application from the robot.
+
+```
+rm -rf ~/environment
+```
