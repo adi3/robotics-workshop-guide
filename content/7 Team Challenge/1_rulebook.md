@@ -39,7 +39,8 @@ pre = "<b>1. </b>"
 
 - A coin will be counted towards your final score if it has been picked up and dropped in the deposit area of the robot.
 
-  - If the robot fails to pick up a coin or drops it on the way to the deposit location, it will **not** be counted towards your final tally. You can, however, run your script again and re-attempt to fetch the coin.
+  - If the robot fails to pick up a coin, it will **not** be counted towards your final tally. You can, however, run your script again and re-attempt to fetch the coin.
+  - If a coin is dropped after it has been picked up but well before the deposit location, you will receive half of the credit.
   - If a coin rolls around or falls off the table _after_ it has been dropped in the deposit zone, it will still be considered a successful pick up.
 
   > See how you might use Gazebo to test your code in a virtual environment before running it on the physical arm.
