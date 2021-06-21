@@ -12,7 +12,7 @@ pre = "3. "
 ```
 git clone https://github.com/adi3/robomaker_workshop.git --branch completed --single-branch ~/environment/aws_ws/src/robomaker_workshop
 
-cd ~/aws_ws
+cd ~/environment/aws_ws
 
 catkin build
 
