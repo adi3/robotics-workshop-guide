@@ -34,8 +34,6 @@ ls ~/environment/aws_ws/src/robomaker_workshop/images/
 5. Launch the ROS application, this time with a `sim:=false` flag since we are working on the physical device.
 
 ```
-source ~/environment/aws_ws/devel/setup.bash
-
 roslaunch robomaker_workshop main.launch sim:=false &
 ```
 

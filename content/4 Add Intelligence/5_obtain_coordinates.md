@@ -21,7 +21,7 @@ coins = {}
 
 for l in labels:
     name = l['Name']
-    x, y = util.get_coin_position(l['Geometry']['BoundingBox'])
+    x, y = util.get_coin_position(l['Geometry']['BoundingBox'], _sim)
     rospy.loginfo(name)
     rospy.loginfo('\tX: ' + str(x) + ' m')
     rospy.loginfo('\tY: ' + str(y) + ' m')
