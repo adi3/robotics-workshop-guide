@@ -44,7 +44,7 @@ roslaunch robomaker_workshop main.launch sim:=false &
 6. Run the _main.py_ script. Press Enter as prompted by the terminal.
 
 ```
-python ~/environment/aws_ws/src/robomaker_workshop/scripts/main.py --internal
+python ~/aws_ws/src/robomaker_workshop/scripts/main.py --internal
 ```
 
 > The `--internal` flag tells the script that the Rekognition model exists in your own AWS account and not in an external one as it did for the simulation exercise.

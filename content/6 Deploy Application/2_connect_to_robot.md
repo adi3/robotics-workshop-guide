@@ -1,11 +1,11 @@
 +++
-title = "Connect to remote robot"
+title = "Connect to robot"
 weight = 620
 chapter = true
 pre = "2. "
 +++
 
-# Connect to remote robot
+# Connect to robot
 
 Only one user may connect to a robot at a time.
 

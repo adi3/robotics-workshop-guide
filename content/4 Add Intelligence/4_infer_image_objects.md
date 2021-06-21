@@ -20,7 +20,7 @@ labels = util.find_coins(IMAGE_NAME, model_arn, CONFIDENCE_THRESHOLD, access_pro
 rospy.loginfo('Found %d labels in image' % len(labels))
 
 util.print_labels(labels)
-util.display_labels(image, labels)
+util.display_labels(IMAGE_NAME, labels)
 ```
 
 ---
