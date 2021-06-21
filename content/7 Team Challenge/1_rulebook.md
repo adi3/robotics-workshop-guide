@@ -7,10 +7,10 @@ pre = "<b>1. </b>"
 
 ---
 
-- You will have 3 minutes to fetch as many coins as possible.
+- You will have 5 minutes to fetch as many coins as possible.
 
   - You can re-run your script any number of times within the alloted period.
-  - You are not allowed to make changes to your script midway through a run.
+  - You are not allowed to make changes to your script midway through a run. You can, however, make changes to your code in between runs.
 
 - There are 5 coin types relevant to this exercise, each made with a different color for easier identification:
 

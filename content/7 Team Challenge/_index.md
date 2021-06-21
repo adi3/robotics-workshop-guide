@@ -9,4 +9,4 @@ pre = "<b>7. </b>"
 
 ### Maximize the value of your deposit box in 3 minutes
 
-[GIF of real thing working...]
+![Robot Fetching Real](/robot-fetch-real.png?classes=border)
