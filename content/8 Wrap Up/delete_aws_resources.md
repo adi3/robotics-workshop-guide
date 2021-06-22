@@ -21,14 +21,8 @@ aws s3 rb s3://$(aws s3 ls | awk '{print $3}' | grep "custom-labels-console") --
 
 ![Stop Model](/stop-model.png?classes=border)
 
-4. Connect to your team's robot via [Botworks](https://dev.d1aqmxpt45hipw.amplifyapp.com/) and wipe off your AWS credentials from the machine.
+4. Connect to your team's robot via [Botworks](https://dev.d1aqmxpt45hipw.amplifyapp.com/) and wipe off your AWS credentials and ROS application from the machine.
 
 ```
-rm -rf ~/.aws
-```
-
-5. Delete your ROS application from the robot.
-
-```
-rm -rf ~/environment
+rm -rf ~/.aws ~/environment
 ```
