@@ -18,7 +18,7 @@ pre = "4. "
 2. Capture a top-view image of the robot's environment using the _Overhead Cam_.
 
 ```
-fswebcam -r 640x480 --png 9 --no-banner ~/environment/aws_ws/src/robomaker_workshop/images/image_cap.png
+fswebcam -r 1280x960 --png 9 --no-banner ~/environment/aws_ws/src/robomaker_workshop/images/image_cap.png
 ```
 
 3. A snap of the camera stream will appear in the _/images_ directory with the name **image_cap.png**.
